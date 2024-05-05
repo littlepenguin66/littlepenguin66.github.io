@@ -1,0 +1,573 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>组合和堆叠方法 | LTPG66</title><meta name="keywords" content="机器学习"><meta name="author" content="little_penguin66"><meta name="copyright" content="little_penguin66"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#18171d"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="组合和堆叠方法"><meta name="application-name" content="组合和堆叠方法"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#18171d"><meta property="og:type" content="article"><meta property="og:title" content="组合和堆叠方法"><meta property="og:url" content="http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E7%BB%84%E5%90%88%E5%92%8C%E5%A0%86%E5%8F%A0%E6%96%B9%E6%B3%95/index.html"><meta property="og:site_name" content="LTPG66"><meta property="og:description" content="组合和堆叠方法 听到上面两个词，我们首先想到的就是在线（online）&amp;#x2F;离线（offline）机器学习竞赛。几年前是这样，但现在随着计算能力的进步和虚拟实例的廉价，人们甚至开始在行业中使用组合模型（ensemble models）。例如，部署多个神经网络并实时为它们提供服务非常容易，响应时间小于 5"><meta property="og:locale" content="en"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png"><meta property="article:author" content="little_penguin66"><meta property="article:tag" content="None"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png"><meta name="description" content="组合和堆叠方法 听到上面两个词，我们首先想到的就是在线（online）&amp;#x2F;离线（offline）机器学习竞赛。几年前是这样，但现在随着计算能力的进步和虚拟实例的廉价，人们甚至开始在行业中使用组合模型（ensemble models）。例如，部署多个神经网络并实时为它们提供服务非常容易，响应时间小于 5"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/favicon.ico"><link rel="canonical" href="http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E7%BB%84%E5%90%88%E5%92%8C%E5%A0%86%E5%8F%A0%E6%96%B9%E6%B3%95/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"ChatGLM","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: 'https://jrz66-comment.hf.space',
+  commentBarrageConfig:{"enable":true,"maxBarrage":1,"barrageTime":4000,"accessToken":"","mailMd5":""},
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: little_penguin66","link":"Link: ","source":"Source: LTPG66","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: {"enable":true,"delay":100,"shiftDelay":200},
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'LTPG66',
+  title: '组合和堆叠方法',
+  postAI: '',
+  pageFillDescription: '组合和堆叠方法组合和堆叠方法听到上面两个词我们首先想到的就是在线离线机器学习竞赛几年前是这样但现在随着计算能力的进步和虚拟实例的廉价人们甚至开始在行业中使用组合模型例如部署多个神经网络并实时为它们提供服务非常容易响应时间小于毫秒有时一个庞大的神经网络或大型模型也可以被其他几个模型取代这些模型体积小性能与大型模型相似速度却快一倍如果是这种情况你会选择哪个些模型呢我个人更倾向于选择多个小机型它们速度更快性能与大机型和慢机型相同请记住较小的型号也更容易和更快地进行调整组合不过是不同模型的组合模型可以通过预测概率进行组合组合模型最简单的方法就是求平均值这是最简单也是最有效的组合模型的方法在简单平均法中所有模型的权重都是相等的无论采用哪种组合方法您都应该牢记一点那就是您应该始终将不同模型的预测概率组合在一起简单地说组合相关性不高的模型比组合相关性很高的模型效果更好如果没有概率也可以组合预测最简单的方法就是投票假设我们正在进行多类分类有三个类别和最高票数最高票级无随机选择一个最高票数以下简单函数可以完成这些简单操作计算第二个维度列每行平均值沿着第二个维度列查找每行中最大值的索引根据索引取出每行中最大值对应的元素请注意的每一列都只有一个概率即二元分类通常为类别因此每一列都是一个新模型同样对于每一列都是来自不同模型的预测值这两个函数都假设了一个维数组您可以根据自己的需求对其进行修改例如您可能有一个维数组其中包含每个模型的概率在这种情况下函数会有一些变化另一种组合多个模型的方法是通过它们的概率排序当相关指标是曲线下面积时这种组合方式非常有效因为就是对样本进行排序创建空列表存储每个类别概率值排名遍历概率值每一列每个类别的概率值当前列概率值排名是排名结果将当前列排名结果添加到列表中将列表中排名结果按列堆叠形成二维数组沿着第二个维度列计算样本排名平均值请注意在的中等级从开始为什么这类集合有效让我们看看图图三人猜大象的身高图显示如果有三个人在猜大象的高度那么原始高度将非常接近三个人猜测的平均值我们假设这些人都能猜到非常接近大象原来的高度接近估计值意味着误差但如果我们将三个预测值平均就能将误差降到最低这就是多个模型平均的主要思想其中例如如果你有一个非常高的随机森林模型和一个稍低的逻辑回归模型你可以把它们结合起来随机森林模型占逻辑回归模型占那么我是如何得出这些数字的呢让我们再添加一个模型假设现在我们也有一个模型它的比随机森林高现在我将把它们结合起来随机森林逻辑回归的比例为很简单吧得出这些数字易如反掌让我们看看是如何做到的假定我们有三只猴子三只旋钮的数值在和之间这些猴子转动旋钮我们计算它们每转到一个数值时的分数最终猴子们会找到一个能给出最佳的组合没错这就是随机搜索在进行这类搜索之前你必须记住两个最重要的组合规则组合的第一条规则是在开始合奏之前一定要先创建折叠组合的第二条规则是在开始合奏之前一定要先创建折叠是的这是最重要的两条规则第一步是创建折叠为了简单起见假设我们将数据分为两部分折叠和折叠请注意这样做只是为了简化解释在实际应用中您应该创建更多的折叠现在我们在折叠上训练随机森林模型逻辑回归模型和模型并在折叠上进行预测之后我们在折叠上从头开始训练模型并在折叠上进行预测这样我们就为所有训练数据创建了预测结果现在为了合并这些模型我们将折叠和折叠的所有预测数据合并在一起然后创建一个优化函数试图找到最佳权重以便针对折叠的目标最小化误差或最大化因此我们是用三个模型的预测概率在折叠上训练一个优化模型然后在折叠上对其进行评估让我们先来看看我们可以用来找到多个模型的最佳权重以优化或任何类型的预测指标组合的类初始化系数对输入数据乘以系数计算每个样本预测值计算分数返回负以便最小化创建带有部分参数的目标函数初始化系数使用函数优化目标函数找到最优系数对输入数据乘以训练好的系数计算每个样本预测值返回预测结果让我们来看看如何使用它并将其与简单平均法进行比较生成一个分类数据集划分数据集为两个交叉验证折叠初始化三个不同的分类器使用第一个折叠数据集训练分类器对第二个折叠数据集进行预测计算平均预测结果计算每个模型的分数并打印重新初始化分类器使用第二个折叠数据集训练分类器对第一个折叠数据集进行预测计算平均预测结果计算每个模型的分数并打印初始化优化器使用第一个折叠数据集的预测结果来训练优化器使用优化器对第二个折叠数据集的预测结果进行优化初始化优化器使用第二个折叠数据集的预测结果来使用优化器对第一个折叠数据集的预测结果进行优化让我们看一下输出我们看到平均值更好但使用优化器找到阈值更好有时平均值是最好的选择正如你所看到的系数加起来并没有达到但这没关系因为我们要处理的是而只关心等级即使随机森林也是一个集合模型随机森林只是许多简单决策树的组合随机森林属于集合模型的一种也就是俗称的在袋集模型中我们创建小数据子集并训练多个简单模型最终结果由所有这些小模型的预测结果如平均值组合而成我们使用的模型也是一个集合模型所有梯度提升模型都是集合模型统称为提升模型提升模型的工作原理与装袋模型类似不同之处在于提升模型中的连续模型是根据误差残差训练的并倾向于最小化前面模型的误差这样提升模型就能完美地学习数据因此容易出现过拟合到目前为止我们看到的代码片段只考虑了一列但情况并非总是如此很多时候您需要处理多列预测例如您可能会遇到从多个类别中预测一个类别的问题即多类分类问题对于多类分类问题你可以很容易地选择投票方法但投票法并不总是最佳方法如果要组合概率就会有一个二维数组而不是像我们之前优化时的向量如果有多个类别可以尝试优化对数损失或其他与业务相关的指标要进行组合可以在拟合函数中使用数组列表而不是数组随后还需要更改优化器和预测函数我就把它作为一个练习留给大家吧现在我们可以进入下一个有趣的话题这个话题相当流行被称为堆叠图展示了如何堆叠模型图堆叠不像制造火箭它简单明了如果您进行了正确的交叉验证并在整个建模过程中保持折叠不变那么就不会出现任何过度贴合的情况让我用简单的要点向你描述一下这个想法将训练数据分成若干折叠训练一堆模型创建完整的训练预测使用非折叠训练并使用所有这些模型进行测试预测直到这里是第层将这些模型的折叠预测作为另一个模型的特征这就是二级模型使用与之前相同的折叠来训练这个模型现在在训练集和测试集上创建折叠外预测现在您就有了训练数据的预测和最终测试集预测您可以不断重复部分也可以创建任意多的层次有时你还会遇到一个叫混合的术语如果你遇到了不用太担心它只不过是用一个保留组来堆叠而不是多重折叠必须指出的是我在本章中所描述的内容可以应用于任何类型的问题分类回归多标签分类等',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-06 00:00:00',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://littlepenguin66.github.io/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/littlepenguin66" title="Github"><img class="back-menu-item-icon" src="anzhiyu-icon-github" alt="Github"/><span class="back-menu-item-text">Github</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">LTPG66</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 留言</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> Search</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> Newest Comments</span></div><div class="aside-list"><span>loading...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.05rem;">前端<sup>2</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/" style="font-size: 1.05rem;">数学物理方程<sup>1</sup></a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem;">机器学习<sup>15</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">May 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">17</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">April 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/AAAMLP/" itemprop="url">AAAMLP</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>机器学习</span></a></span></div></div><h1 class="post-title" itemprop="name headline">组合和堆叠方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-05-05T16:00:00.000Z" title="Updated 2024-05-06 00:00:00">2024-05-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为北京"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>北京</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E7%BB%84%E5%90%88%E5%92%8C%E5%A0%86%E5%8F%A0%E6%96%B9%E6%B3%95/"><header><a class="post-meta-categories" href="/categories/AAAMLP/" itemprop="url">AAAMLP</a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" tabindex="-1" itemprop="url">机器学习</a><h1 id="CrawlerTitle" itemprop="name headline">组合和堆叠方法</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">little_penguin66</span><time itemprop="dateCreated datePublished" datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time><time itemprop="dateCreated datePublished" datetime="2024-05-05T16:00:00.000Z" title="Updated 2024-05-06 00:00:00">2024-05-06</time></header><h1>组合和堆叠方法</h1>
+<p>听到上面两个词，我们首先想到的就是在线（online）/离线（offline）机器学习竞赛。几年前是这样，但现在随着计算能力的进步和虚拟实例的廉价，人们甚至开始在行业中使用组合模型（ensemble models）。例如，部署多个神经网络并实时为它们提供服务非常容易，响应时间小于 500 毫秒。有时，一个庞大的神经网络或大型模型也可以被其他几个模型取代，这些模型体积小，性能与大型模型相似，速度却快一倍。如果是这种情况，你会选择哪个（些）模型呢？我个人更倾向于选择多个小机型，它们速度更快，性能与大机型和慢机型相同。请记住，较小的型号也更容易和更快地进行调整。</p>
+<p>组合（ensembling）不过是不同模型的组合。模型可以通过预测/概率进行组合。组合模型最简单的方法就是求平均值。</p>
+<p>$$<br>
+Ensemble Probabilities = (M1_proba + M2_proba + … + Mn_Proba)/n<br>
+$$</p>
+<p>这是最简单也是最有效的组合模型的方法。在简单平均法中，所有模型的权重都是相等的。无论采用哪种组合方法，您都应该牢记一点，那就是您应该始终将不同模型的预测/概率组合在一起。简单地说，组合相关性不高的模型比组合相关性很高的模型效果更好。</p>
+<p>如果没有概率，也可以组合预测。最简单的方法就是投票。假设我们正在进行多类分类，有三个类别： 0、1 和 2。</p>
+<p>[0, 0, 1] : 最高票数： 0</p>
+<p>[0, 1, 2] : 最高票级： 无（随机选择一个）</p>
+<p>[2, 2, 2] : 最高票数： 2</p>
+<p>以下简单函数可以完成这些简单操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mean_predictions</span>(<span class="params">probas</span>):</span><br><span class="line">    <span class="comment"># 计算第二个维度（列）每行平均值</span></span><br><span class="line">    <span class="keyword">return</span> np.mean(probas, axis=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">max_voting</span>(<span class="params">preds</span>):</span><br><span class="line">    <span class="comment"># 沿着第二个维度（列）查找每行中最大值的索引</span></span><br><span class="line">	idxs = np.argmax(preds, axis=<span class="number">1</span>)</span><br><span class="line">    <span class="comment"># 根据索引取出每行中最大值对应的元素</span></span><br><span class="line">	<span class="keyword">return</span> np.take_along_axis(preds, idxs[:, <span class="literal">None</span>], axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>请注意，probas 的每一列都只有一个概率（即二元分类，通常为类别 1）。因此，每一列都是一个新模型。同样，对于 preds，每一列都是来自不同模型的预测值。这两个函数都假设了一个 2 维 numpy 数组。您可以根据自己的需求对其进行修改。例如，您可能有一个 2 维数组，其中包含每个模型的概率。在这种情况下，函数会有一些变化。 另一种组合多个模型的方法是通过它们的<strong>概率排序</strong>。当相关指标是曲线下面积（AUC）时，这种组合方式非常有效，因为 AUC 就是对样本进行排序。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rank_mean</span>(<span class="params">probas</span>):</span><br><span class="line">    <span class="comment"># 创建空列表ranked存储每个类别概率值排名</span></span><br><span class="line">    ranked = []</span><br><span class="line">    <span class="comment"># 遍历概率值每一列（每个类别的概率值）</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(probas.shape[<span class="number">1</span>]):</span><br><span class="line">        <span class="comment"># 当前列概率值排名，rank_data是排名结果</span></span><br><span class="line">        rank_data = stats.rankdata(probas[:, i])</span><br><span class="line">        <span class="comment"># 将当前列排名结果添加到ranked列表中</span></span><br><span class="line">        ranked.append(rank_data)</span><br><span class="line">        <span class="comment"># 将ranked列表中排名结果按列堆叠，形成二维数组</span></span><br><span class="line">        ranked = np.column_stack(ranked)</span><br><span class="line">    <span class="comment"># 沿着第二个维度（列）计算样本排名平均值</span></span><br><span class="line">    <span class="keyword">return</span> np.mean(ranked, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>请注意，在 scipy 的 rankdata 中，等级从 1 开始。</p>
+<p>为什么这类集合有效？让我们看看图 1。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLP_page273_image.png" alt=""></p>
+<p align="center"><b>图 1：三人猜大象的身高</b> </p>
+<p>图 1 显示，如果有三个人在猜大象的高度，那么原始高度将非常接近三个人猜测的平均值。我们假设这些人都能猜到非常接近大象原来的高度。接近估计值意味着误差，但如果我们将三个预测值平均，就能将误差降到最低。这就是多个模型平均的主要思想。</p>
+<p>$$<br>
+Final\ Probabilities = w_1 \times M1_proba + w_2 \times M2_proba + \cdots + w_n \times Mn_proba<br>
+$$</p>
+<p>其中$(w_1 + w_2 + w_3 + \cdots + w_n)=1.0$</p>
+<p>例如，如果你有一个 AUC 非常高的随机森林模型和一个 AUC 稍低的逻辑回归模型，你可以把它们结合起来，随机森林模型占 70%，逻辑回归模型占 30%。那么，我是如何得出这些数字的呢？让我们再添加一个模型，假设现在我们也有一个 xgboost 模型，它的 AUC 比随机森林高。现在，我将把它们结合起来，xgboost：随机森林：逻辑回归的比例为 3:2:1。很简单吧？得出这些数字易如反掌。让我们看看是如何做到的。</p>
+<p>假定我们有三只猴子，三只旋钮的数值在 0 和 1 之间。这些猴子转动旋钮，我们计算它们每转到一个数值时的 AUC 分数。最终，猴子们会找到一个能给出最佳 AUC 的组合。没错，这就是随机搜索！在进行这类搜索之前，你必须记住两个最重要的组合规则。</p>
+<p>组合的第一条规则是，在开始合奏之前，一定要先创建折叠。</p>
+<p>组合的第二条规则是，在开始合奏之前，一定要先创建折叠。</p>
+<p>是的。这是最重要的两条规则。第一步是创建折叠。为了简单起见，假设我们将数据分为两部分：折叠 1 和折叠 2。请注意，这样做只是为了简化解释。在实际应用中，您应该创建更多的折叠。</p>
+<p>现在，我们在折叠 1 上训练随机森林模型、逻辑回归模型和 xgboost 模型，并在折叠 2 上进行预测。之后，我们在折叠 2 上从头开始训练模型，并在折叠 1 上进行预测。这样，我们就为所有训练数据创建了预测结果。现在，为了合并这些模型，我们将折叠 1 和折叠 1 的所有预测数据合并在一起，然后创建一个优化函数，试图找到最佳权重，以便针对折叠 2 的目标最小化误差或最大化 AUC。因此，我们是用三个模型的预测概率在折叠 1 上训练一个优化模型，然后在折叠 2 上对其进行评估。让我们先来看看我们可以用来找到多个模型的最佳权重，以优化 AUC（或任何类型的预测指标组合）的类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"><span class="keyword">from</span> scipy.optimize <span class="keyword">import</span> fmin</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> metrics</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">OptimizeAUC</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 初始化系数</span></span><br><span class="line">        self.coef_ = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_auc</span>(<span class="params">self, coef, X, y</span>):</span><br><span class="line">        <span class="comment"># 对输入数据乘以系数</span></span><br><span class="line">        x_coef = X * coef</span><br><span class="line">        <span class="comment"># 计算每个样本预测值</span></span><br><span class="line">        predictions = np.<span class="built_in">sum</span>(x_coef, axis=<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 计算AUC分数</span></span><br><span class="line">        auc_score = metrics.roc_auc_score(y, predictions)</span><br><span class="line">        <span class="comment"># 返回负AUC以便最小化</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1.0</span> * auc_score</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">fit</span>(<span class="params">self, X, y</span>):</span><br><span class="line">        <span class="comment"># 创建带有部分参数的目标函数</span></span><br><span class="line">        loss_partial = partial(self._auc, X=X, y=y)</span><br><span class="line">        <span class="comment"># 初始化系数</span></span><br><span class="line">        initial_coef = np.random.dirichlet(np.ones(X.shape[<span class="number">1</span>]), size=<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 使用fmin函数优化AUC目标函数，找到最优系数</span></span><br><span class="line">        self.coef_ = fmin(loss_partial, initial_coef, disp=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">self, X</span>):</span><br><span class="line">        <span class="comment"># 对输入数据乘以训练好的系数</span></span><br><span class="line">        x_coef = X * self.coef_</span><br><span class="line">        <span class="comment"># 计算每个样本预测值</span></span><br><span class="line">        predictions = np.<span class="built_in">sum</span>(x_coef, axis=<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 返回预测结果</span></span><br><span class="line">        <span class="keyword">return</span> predictions</span><br></pre></td></tr></table></figure>
+<p>让我们来看看如何使用它，并将其与简单平均法进行比较。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xgboost <span class="keyword">as</span> xgb</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> make_classification</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> ensemble</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> metrics</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成一个分类数据集</span></span><br><span class="line">X, y = make_classification(n_samples=<span class="number">10000</span>, n_features=<span class="number">25</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 划分数据集为两个交叉验证折叠</span></span><br><span class="line">xfold1, xfold2, yfold1, yfold2 = model_selection.train_test_split(X,</span><br><span class="line">                                                                  y,</span><br><span class="line">                                                                  test_size=<span class="number">0.5</span>,</span><br><span class="line">                                                                  stratify=y)</span><br><span class="line"><span class="comment"># 初始化三个不同的分类器</span></span><br><span class="line">logreg = linear_model.LogisticRegression()</span><br><span class="line">rf = ensemble.RandomForestClassifier()</span><br><span class="line">xgbc = xgb.XGBClassifier()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用第一个折叠数据集训练分类器</span></span><br><span class="line">logreg.fit(xfold1, yfold1)</span><br><span class="line">rf.fit(xfold1, yfold1)</span><br><span class="line">xgbc.fit(xfold1, yfold1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对第二个折叠数据集进行预测</span></span><br><span class="line">pred_logreg = logreg.predict_proba(xfold2)[:, <span class="number">1</span>]</span><br><span class="line">pred_rf = rf.predict_proba(xfold2)[:, <span class="number">1</span>]</span><br><span class="line">pred_xgbc = xgbc.predict_proba(xfold2)[:, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算平均预测结果</span></span><br><span class="line">avg_pred = (pred_logreg + pred_rf + pred_xgbc) / <span class="number">3</span></span><br><span class="line">fold2_preds = np.column_stack((pred_logreg, pred_rf, pred_xgbc, avg_pred))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算每个模型的AUC分数并打印</span></span><br><span class="line">aucs_fold2 = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(fold2_preds.shape[<span class="number">1</span>]):</span><br><span class="line">    auc = metrics.roc_auc_score(yfold2, fold2_preds[:, i])</span><br><span class="line">    aucs_fold2.append(auc)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Fold-2: LR AUC = <span class="subst">&#123;aucs_fold2[<span class="number">0</span>]&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Fold-2: RF AUC = <span class="subst">&#123;aucs_fold2[<span class="number">1</span>]&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Fold-2: XGB AUC = <span class="subst">&#123;aucs_fold2[<span class="number">2</span>]&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Fold-2: Average Pred AUC = <span class="subst">&#123;aucs_fold2[<span class="number">3</span>]&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新初始化分类器</span></span><br><span class="line">logreg = linear_model.LogisticRegression()</span><br><span class="line">rf = ensemble.RandomForestClassifier()</span><br><span class="line">xgbc = xgb.XGBClassifier()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用第二个折叠数据集训练分类器</span></span><br><span class="line">logreg.fit(xfold2, yfold2)</span><br><span class="line">rf.fit(xfold2, yfold2)</span><br><span class="line">xgbc.fit(xfold2, yfold2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对第一个折叠数据集进行预测</span></span><br><span class="line">pred_logreg = logreg.predict_proba(xfold1)[:, <span class="number">1</span>]</span><br><span class="line">pred_rf = rf.predict_proba(xfold1)[:, <span class="number">1</span>]</span><br><span class="line">pred_xgbc = xgbc.predict_proba(xfold1)[:, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算平均预测结果</span></span><br><span class="line">avg_pred = (pred_logreg + pred_rf + pred_xgbc) / <span class="number">3</span></span><br><span class="line">fold1_preds = np.column_stack((pred_logreg, pred_rf, pred_xgbc, avg_pred))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算每个模型的AUC分数并打印</span></span><br><span class="line">aucs_fold1 = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(fold1_preds.shape[<span class="number">1</span>]):</span><br><span class="line">    auc = metrics.roc_auc_score(yfold1, fold1_preds[:, i])</span><br><span class="line">    aucs_fold1.append(auc)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Fold-1: LR AUC = <span class="subst">&#123;aucs_fold1[<span class="number">0</span>]&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Fold-1: RF AUC = <span class="subst">&#123;aucs_fold1[<span class="number">1</span>]&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Fold-1: XGB AUC = <span class="subst">&#123;aucs_fold1[<span class="number">2</span>]&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Fold-1: Average prediction AUC = <span class="subst">&#123;aucs_fold1[<span class="number">3</span>]&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化AUC优化器</span></span><br><span class="line">opt = OptimizeAUC()</span><br><span class="line"><span class="comment"># 使用第一个折叠数据集的预测结果来训练优化器</span></span><br><span class="line">opt.fit(fold1_preds[:, :-<span class="number">1</span>], yfold1)</span><br><span class="line"><span class="comment"># 使用优化器对第二个折叠数据集的预测结果进行优化</span></span><br><span class="line">opt_preds_fold2 = opt.predict(fold2_preds[:, :-<span class="number">1</span>])</span><br><span class="line">auc = metrics.roc_auc_score(yfold2, opt_preds_fold2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Optimized AUC, Fold 2 = <span class="subst">&#123;auc&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Coefficients = <span class="subst">&#123;opt.coef_&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化AUC优化器</span></span><br><span class="line">opt = OptimizeAUC()</span><br><span class="line"><span class="comment"># 使用第二个折叠数据集的预测结果来</span></span><br><span class="line">opt.fit(fold2_preds[:, :-<span class="number">1</span>], yfold2)</span><br><span class="line"><span class="comment"># 使用优化器对第一个折叠数据集的预测结果进行优化</span></span><br><span class="line">opt_preds_fold1 = opt.predict(fold1_preds[:, :-<span class="number">1</span>])</span><br><span class="line">auc = metrics.roc_auc_score(yfold1, opt_preds_fold1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Optimized AUC, Fold 1 = <span class="subst">&#123;auc&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Coefficients = <span class="subst">&#123;opt.coef_&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>让我们看一下输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">❯ python auc_opt.py</span><br><span class="line">Fold-<span class="number">2</span>: LR AUC = <span class="number">0.9145446769443348</span></span><br><span class="line">Fold-<span class="number">2</span>: RF AUC = <span class="number">0.9269918948683287</span></span><br><span class="line">Fold-<span class="number">2</span>: XGB AUC = <span class="number">0.9302436595508696</span></span><br><span class="line">Fold-<span class="number">2</span>: Average Pred AUC = <span class="number">0.927701495890154</span></span><br><span class="line">Fold-<span class="number">1</span>: LR AUC = <span class="number">0.9050872233256017</span></span><br><span class="line">Fold-<span class="number">1</span>: RF AUC = <span class="number">0.9179382818311258</span></span><br><span class="line">Fold-<span class="number">1</span>: XGB AUC = <span class="number">0.9195837242005629</span></span><br><span class="line">Fold-<span class="number">1</span>: Average prediction AUC = <span class="number">0.9189669233123695</span></span><br><span class="line">Optimization terminated successfully.</span><br><span class="line">Current function value: -<span class="number">0.920643</span></span><br><span class="line">Iterations: <span class="number">50</span></span><br><span class="line">Function evaluations: <span class="number">109</span></span><br><span class="line">Optimized AUC, Fold <span class="number">2</span> = <span class="number">0.9305386199756128</span></span><br><span class="line">Coefficients = [-<span class="number">0.00188194</span> <span class="number">0.19328336</span> <span class="number">0.35891836</span>]</span><br><span class="line">Optimization terminated successfully.</span><br><span class="line">Current function value: -<span class="number">0.931232</span></span><br><span class="line">Iterations: <span class="number">56</span></span><br><span class="line">Function evaluations: <span class="number">113</span></span><br><span class="line">Optimized AUC, Fold <span class="number">1</span> = <span class="number">0.9192523637234037</span></span><br><span class="line">Coefficients = [-<span class="number">0.15655124</span> <span class="number">0.22393151</span> <span class="number">0.58711366</span>]</span><br></pre></td></tr></table></figure>
+<p>我们看到，平均值更好，但使用优化器找到阈值更好！有时，平均值是最好的选择。正如你所看到的，系数加起来并没有达到 1.0，但这没关系，因为我们要处理的是 AUC，而 AUC 只关心等级。</p>
+<p>即使随机森林也是一个集合模型。随机森林只是许多简单决策树的组合。随机森林属于集合模型的一种，也就是俗称的**“bagging”**。在袋集模型中，我们创建小数据子集并训练多个简单模型。最终结果由所有这些小模型的预测结果（如平均值）组合而成。</p>
+<p>我们使用的 xgboost 模型也是一个集合模型。所有梯度提升模型都是集合模型，统称为<strong>提升模型（boosting models）</strong>。提升模型的工作原理与装袋模型类似，不同之处在于提升模型中的连续模型是根据误差残差训练的，并倾向于最小化前面模型的误差。这样，提升模型就能完美地学习数据，因此容易出现过拟合。</p>
+<p>到目前为止，我们看到的代码片段只考虑了一列。但情况并非总是如此，很多时候您需要处理多列预测。例如，您可能会遇到从多个类别中预测一个类别的问题，即多类分类问题。对于多类分类问题，你可以很容易地选择投票方法。但投票法并不总是最佳方法。如果要组合概率，就会有一个二维数组，而不是像我们之前优化 AUC 时的向量。如果有多个类别，可以尝试优化对数损失（或其他与业务相关的指标）。 要进行组合，可以在拟合函数 (X) 中使用 numpy 数组列表而不是 numpy 数组，随后还需要更改优化器和预测函数。我就把它作为一个练习留给大家吧。</p>
+<p>现在，我们可以进入下一个有趣的话题，这个话题相当流行，被称为<strong>堆叠</strong>。图 2 展示了如何堆叠模型。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLP_page280_image.png" alt=""></p>
+<p align="center"><b>图2 : Stacking</b> </p>
+<p>堆叠不像制造火箭。它简单明了。如果您进行了正确的交叉验证，并在整个建模过程中保持折叠不变，那么就不会出现任何过度贴合的情况。</p>
+<p>让我用简单的要点向你描述一下这个想法。</p>
+<ul>
+<li>将训练数据分成若干折叠。</li>
+<li>训练一堆模型： M1、M2…Mn。</li>
+<li>创建完整的训练预测（使用非折叠训练），并使用所有这些模型进行测试预测。</li>
+<li>直到这里是第 1 层 (L1)。</li>
+<li>将这些模型的折叠预测作为另一个模型的特征。这就是二级模型（L2）。</li>
+<li>使用与之前相同的折叠来训练这个 L2 模型。</li>
+<li>现在，在训练集和测试集上创建 OOF（折叠外）预测。</li>
+<li>现在您就有了训练数据的 L2 预测和最终测试集预测。</li>
+</ul>
+<p>您可以不断重复 L1 部分，也可以创建任意多的层次。</p>
+<p>有时，你还会遇到一个叫混合的术语<strong>blending</strong>。如果你遇到了，不用太担心。它只不过是用一个保留组来堆叠，而不是多重折叠。必须指出的是，我在本章中所描述的内容可以应用于任何类型的问题：分类、回归、多标签分类等。</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">little_penguin66</div><div class="post-copyright__author_desc">Minimalism is the best!</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E7%BB%84%E5%90%88%E5%92%8C%E5%A0%86%E5%8F%A0%E6%96%B9%E6%B3%95/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E7%BB%84%E5%90%88%E5%92%8C%E5%A0%86%E5%8F%A0%E6%96%B9%E6%B3%95/')">组合和堆叠方法</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E7%BB%84%E5%90%88%E5%92%8C%E5%A0%86%E5%8F%A0%E6%96%B9%E6%B3%95/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=组合和堆叠方法&amp;url=http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E7%BB%84%E5%90%88%E5%92%8C%E5%A0%86%E5%8F%A0%E6%96%B9%E6%B3%95/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>机器学习<span class="tagsPageCount">15</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/index/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">AAAMLP前言</div></div></a></div><div class="next-post pull-right"><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%92%8C%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">无监督和有监督学习</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/uncategorized/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/" title="九种常见激活函数"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/activationFuction.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-02</div><div class="title">九种常见激活函数</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/index/" title="AAAMLP前言"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-05</div><div class="title">AAAMLP前言</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/" title="准备环境"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">准备环境</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BB%A3%E7%A0%81%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/" title="可重复代码和模型方法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">可重复代码和模型方法</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E4%BA%A4%E5%8F%89%E6%A3%80%E9%AA%8C/" title="交叉检验"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-05</div><div class="title">交叉检验</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95/" title="图像分类和分割方法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">图像分类和分割方法</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> Comment</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有没有<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，也没<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你不可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">little_penguin66</h1><div class="author-info__desc">Minimalism is the best!</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/littlepenguin66" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/34685008" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>Announcement</span></div><div class="announcement_content">欢迎来看我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">组合和堆叠方法</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/" title="准备环境">准备环境</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BB%A3%E7%A0%81%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/" title="可重复代码和模型方法">可重复代码和模型方法</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95/" title="图像分类和分割方法">图像分类和分割方法</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E6%88%96%E5%9B%9E%E5%BD%92%E6%96%B9%E6%B3%95/" title="文本分类或回归方法">文本分类或回归方法</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%92%8C%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/" title="无监督和有监督学习">无监督和有监督学习</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="/2201529520@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/littlepenguin66" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/34685008" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div><div class="copyright">&copy;2024 By little_penguin66</div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a></p></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://littlepenguin66.github.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/littlepenguin66" title="Github"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="anzhiyu-icon-github" alt="Github"/><span class="back-menu-item-text">Github</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 留言</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Python/" style="font-size: 0.88rem;">Python<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 0.88rem;">前端<sup>2</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/" style="font-size: 0.88rem;">数学物理方程<sup>1</sup></a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 0.88rem;">机器学习<sup>15</sup></a></div></div><hr/></div></div><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keybordList"><div class="keybordItem"><div class="keyGroup"><div class="key">shift K</div></div><div class="keyContent"><div class="content">关闭快捷键功能</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift A</div></div><div class="keyContent"><div class="content">打开/关闭中控台</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift D</div></div><div class="keyContent"><div class="content">深色/浅色显示模式</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift S</div></div><div class="keyContent"><div class="content">站内搜索</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift R</div></div><div class="keyContent"><div class="content">随机访问</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift H</div></div><div class="keyContent"><div class="content">返回首页</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift F</div></div><div class="keyContent"><div class="content">友链鱼塘</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift L</div></div><div class="keyContent"><div class="content">友链页面</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift P</div></div><div class="keyContent"><div class="content">关于本站</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift I</div></div><div class="keyContent"><div class="content">原版/本站右键菜单</div></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch-commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.4"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/29/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2024 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 little_penguin66 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.cbd.int/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://jrz66-comment.hf.space',
+      region: 'ap-east-1',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.25/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://jrz66-comment.hf.space',
+      region: 'ap-east-1',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"><script async src="/js/anzhiyu/comment_barrage.js"></script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[image]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[link]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[code]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://jrz66-comment.hf.space',
+        region: 'ap-east-1',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "Unable to get the data, please make sure the settings are correct."
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.25/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += 'No Comment'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "annoymously@aml.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

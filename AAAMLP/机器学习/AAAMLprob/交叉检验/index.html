@@ -1,0 +1,740 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>交叉检验 | LTPG66</title><meta name="keywords" content="机器学习"><meta name="author" content="little_penguin66"><meta name="copyright" content="little_penguin66"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#18171d"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="交叉检验"><meta name="application-name" content="交叉检验"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#18171d"><meta property="og:type" content="article"><meta property="og:title" content="交叉检验"><meta property="og:url" content="http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E4%BA%A4%E5%8F%89%E6%A3%80%E9%AA%8C/index.html"><meta property="og:site_name" content="LTPG66"><meta property="og:description" content="交叉检验  博客就像与人进行长时间的对话一样，因此你所喜欢谈论的事情与你的激情密切相关是有道理的。  引言  承诺声明 即将到来的内容的预览  概述  简单的定义 示例 过渡到下一节  步骤  每个步骤的详细说明  结论  提醒指南的有用性 重申你的话题的重要性 呼吁行动  清单 灵感 ⛅  [ ]"><meta property="og:locale" content="en"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png"><meta property="article:author" content="little_penguin66"><meta property="article:tag" content="None"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png"><meta name="description" content="交叉检验  博客就像与人进行长时间的对话一样，因此你所喜欢谈论的事情与你的激情密切相关是有道理的。  引言  承诺声明 即将到来的内容的预览  概述  简单的定义 示例 过渡到下一节  步骤  每个步骤的详细说明  结论  提醒指南的有用性 重申你的话题的重要性 呼吁行动  清单 灵感 ⛅  [ ]"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/favicon.ico"><link rel="canonical" href="http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E4%BA%A4%E5%8F%89%E6%A3%80%E9%AA%8C/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"ChatGLM","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: 'https://jrz66-comment.hf.space',
+  commentBarrageConfig:{"enable":true,"maxBarrage":1,"barrageTime":4000,"accessToken":"","mailMd5":""},
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: little_penguin66","link":"Link: ","source":"Source: LTPG66","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: {"enable":true,"delay":100,"shiftDelay":200},
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'LTPG66',
+  title: '交叉检验',
+  postAI: '',
+  pageFillDescription: '交叉检验, 引言, 概述, 步骤, 结论, 清单, 交叉检验, 交叉检验, 引言, 概述, 步骤, 结论, 清单, 引言, 概述, 步骤, 结论, 清单交叉检验博客就像与人进行长时间的对话一样因此你所喜欢谈论的事情与你的激情密切相关是有道理的引言承诺声明即将到来的内容的预览概述简单的定义示例过渡到下一节步骤每个步骤的详细说明结论提醒指南的有用性重申你的话题的重要性呼吁行动清单灵感阅读启发我的文章和观看视频用子弹点列出我想写的主题重新排列这些子弹点以形成思路草稿将这些子弹点扩展成句子文本审阅文档准备发布拟定个标题并选择一个校对全文的错别字预览文本发布或安排帖子在社交媒体上推广交叉检验在上一章中我们没有建立任何模型原因很简单在创建任何一种机器学习模型之前我们必须知道什么是交叉检验以及如何根据数据集选择最佳交叉检验数据集那么什么是交叉检验我们为什么要关注它交叉检验博客就像与人进行长时间的对话一样因此你所喜欢谈论的事情与你的激情密切相关是有道理的引言承诺声明即将到来的内容的预览概述简单的定义示例过渡到下一节步骤每个步骤的详细说明结论提醒指南的有用性重申你的话题的重要性呼吁行动清单灵感阅读启发我的文章和观看视频用子弹点列出我想写的主题重新排列这些子弹点以形成思路草稿将这些子弹点扩展成句子文本审阅文档准备发布拟定个标题并选择一个校对全文的错别字预览文本发布或安排帖子在社交媒体上推广关于什么是交叉检验交叉检验博客就像与人进行长时间的对话一样因此你所喜欢谈论的事情与你的激情密切相关是有道理的引言承诺声明即将到来的内容的预览概述简单的定义示例过渡到下一节步骤每个步骤的详细说明结论提醒指南的有用性重申你的话题的重要性呼吁行动清单灵感阅读启发我的文章和观看视频用子弹点列出我想写的主题重新排列这些子弹点以形成思路草稿将这些子弹点扩展成句子文本审阅文档准备发布拟定个标题并选择一个校对全文的错别字预览文本发布或安排帖子在社交媒体上推广我们可以找到多种定义我的定义只有一句话交叉检验是构建机器学习模型过程中的一个步骤它可以帮助我们确保模型准确拟合数据同时确保我们不会过拟合但这又引出了另一个词过拟合要解释过拟合我认为最好先看一个数据集有一个相当有名的红酒质量数据集这个数据集有个不同的特征这些特征决定了红酒的质量这些属性包括固定酸度挥发性酸度柠檬酸残留糖氯化物游离二氧化硫二氧化硫总量密度值硫酸盐酒精根据这些不同特征我们需要预测红葡萄酒的质量质量值介于到之间让我们看看这些数据是怎样的图红葡萄酒质量数据集简单展示我们可以将这个问题视为分类问题也可以视为回归问题为了简单起见我们选择分类然而这个数据集值包含种质量值因此我们将所有质量值映射到到之间一个映射字典用于将质量值从到进行映射你可以使用的函数以及任何字典来转换给定列中的值为字典中的值当我们看大这些数据并将其视为一个分类问题时我们脑海中会浮现出很多可以应用的算法也许我们可以使用神经网络但是如果我们从一开始就深入研究神经网络那就有点牵强了所以让我们从简单的我们也能可视化的东西开始决策树在开始了解什么是过拟合之前我们先将数据分为两部分这个数据集有个样本我们保留个样本用于训练个样本作为一个单独的集合以下代码可以轻松完成划分使用的方法来打乱由于打乱后索引会改变所以我们重置索引选取前行作为训练数据选取最后的行作为测试验证数据现在我们将在训练集上使用训练一个决策树模型从导入需要的模块初始化一个决策树分类器设置最大深度为选择你想要训练模型的列这些列作为模型的特征使用之前映射的质量以及提供的特征来训练模型请注意我将决策树分类器的最大深度设为该模型的所有其他参数均保持默认值现在我们在训练集和测试集上测试该模型的准确性在训练集上生成预测在测试集上生成预测计算训练数据集上预测的准确度计算测试数据集上预测的准确度训练和测试的准确率分别为和现在我们将最大深度增加到并重复上述过程这样训练准确率为测试准确率为在这里我们使用准确率主要是因为它是最直接的指标对于这个问题来说它可能不是最好的指标我们可以根据最大深度的不同值来计算这些准确率并绘制曲线图注意这段代码在笔记本中编写导入的和导入和用于绘图设置全局标签文本的大小确保图表直接在笔记本内显示初始化用于存储训练和测试准确度的列表我们从的准确度开始遍历几个不同的树深度值初始化模型选择用于训练的列特征在给定特征上拟合模型创建训练和测试预测计算训练和测试准确度添加准确度到列表使用和创建两个图这将生成如图所示的曲线图图不同训练和测试准确率我们可以看到当最大深度的值为时测试数据的得分最高随着我们不断增加这个参数的值测试准确率会保持不变或变差但训练准确率会不断提高这说明随着最大深度的增加决策树模型对训练数据的学习效果越来越好但测试数据的性能却丝毫没有提高这就是所谓的过拟合模型在训练集上完全拟合而在测试集上却表现不佳这意味着模型可以很好地学习训练数据但无法泛化到未见过的样本上在上面的数据集中我们可以建立一个最大深度非常高的模型它在训练数据上会有出色的结果但这种模型并不实用因为它在真实世界的样本或实时数据上不会提供类似的结果有人可能会说这种方法并没有过拟合因为测试集的准确率基本保持不变过拟合的另一个定义是当我们不断提高训练损失时测试损失也在增加这种情况在神经网络中非常常见每当我们训练一个神经网络时都必须在训练期间监控训练集和测试集的损失如果我们有一个非常大的网络来处理一个非常小的数据集即样本数非常少我们就会观察到随着我们不断训练训练集和测试集的损失都会减少但是在某个时刻测试损失会达到最小值之后即使训练损失进一步减少测试损失也会开始增加我们必须在验证损失达到最小值时停止训练这是对过拟合最常见的解释奥卡姆剃刀用简单的话说就是不要试图把可以用简单得多的方法解决的事情复杂化换句话说最简单的解决方案就是最具通用性的解决方案一般来说只要你的模型不符合奥卡姆剃刀原则就很可能是过拟合图过拟合的最一般定义现在我们可以回到交叉检验在解释过拟合时我决定将数据分为两部分我在其中一部分上训练模型然后在另一部分上检查其性能这也是交叉检验的一种通常被称为暂留集当我们拥有大量数据而模型推理是一个耗时的过程时我们就会使用这种交叉验证交叉检验有许多不同的方法它是建立一个良好的机器学习模型的最关键步骤选择正确的交叉检验取决于所处理的数据集在一个数据集上适用的交叉检验也可能不适用于其他数据集不过有几种类型的交叉检验技术最为流行和广泛使用其中包括折交叉检验分层折交叉检验暂留交叉检验留一交叉检验分组折交叉检验交叉检验是将训练数据分层几个部分我们在其中一部分上训练模型然后在其余部分上进行测试请看图图将数据集拆分为训练集和验证集图和图说明当你得到一个数据集来构建机器学习模型时你会把它们分成两个不同的集训练集和验证集很多人还会将其分成第三组称之为测试集不过我们将只使用两个集如你所见我们将样本和与之相关的目标进行了划分我们可以将数据分为个互不关联的不同集合这就是所谓的折交叉检验图折交叉检验我们可以使用中的将任何数据分割成个相等的部分每个样本分配一个从到的值导入和的模块训练数据存储在名为的文件中我们创建一个名为的新列并用填充接下来的步骤是随机打乱数据的行从模块初始化类填充新的列的作用是返回一个迭代器保存带有列的新文件几乎所有类型的数据集都可以使用此流程例如当数据图像时您可以创建一个包含图像图像位置和图像标签的然后使用上述流程另一种重要的交叉检验类型是分层折交叉检验如果你有一个偏斜的二元分类数据集其中正样本占负样本只占那么你就不应该使用随机折交叉对这样的数据集使用简单的折交叉检验可能会导致折叠样本全部为负样本在这种情况下我们更倾向于使用分层折交叉检验分层折交叉检验可以保持每个折中标签的比例不变因此在每个折叠中都会有相同的正样本和负样本因此无论您选择什么指标进行评估都会在所有折叠中得到相似的结果修改创建折交叉检验的代码以创建分层折交叉检验也很容易我们只需将更改为并在函数中指定要分层的目标列我们假设数据集有一列名为并且是一个分类问题导入和的模块训练数据保存在名为的文件中添加一个新列并用初始化随机打乱数据行获取目标变量初始化类设置折数为使用对象的方法来获取训练和验证索引保存包含列的新文件对于葡萄酒数据集我们来看看标签的分布情况请注意我们继续上面的代码因此我们已经转换了目标值从图中我们可以看出质量偏差很大有些类别有很多样本有些则没有那么多如果我们进行简单的折交叉检验那么每个折叠中的目标值分布都不会相同因此在这种情况下我们选择分层折交叉检验图葡萄酒数据集中质量分布情况规则很简单如果是标准分类问题就盲目选择分层折交叉检验但如果数据量很大该怎么办呢假设我们有万个样本倍交叉检验意味着在个样本上进行训练在个样本上进行验证根据我们选择的算法对于这样规模的数据集来说训练甚至验证都可能非常昂贵在这种情况下我们可以选择暂留交叉检验创建保持结果的过程与分层折交叉检验相同对于拥有万个样本的数据集我们可以创建个折叠而不是个并保留其中一个折叠作为保留样本这意味着我们将有万个样本被保留下来我们将始终在这个样本集上计算损失准确率和其他指标并在万个样本上进行训练在处理时间序列数据时暂留交叉检验也非常常用假设我们要解决的问题是预测一家商店年的销售额而我们得到的是年的所有数据在这种情况下你可以选择年的所有数据作为保留数据然后在年至年的所有数据上训练你的模型图时间序列数据示例在图所示的示例中假设我们的任务是预测从时间步骤到的销售额我们可以保留至步的数据然后从步到步训练模型需要注意的是在预测步至步时应将步至步的数据纳入模型否则模型的性能将大打折扣在很多情况下我们必须处理小型数据集而创建大型验证集意味着模型学习会丢失大量数据在这种情况下我们可以选择留一交叉检验相当于特殊的则交叉检验其中是数据集中的样本数这意味着在所有的训练折叠中我们将对除之外的所有数据样本进行训练这种类型的交叉检验的折叠数与数据集中的样本数相同需要注意的是如果模型的速度不够快这种类型的交叉检验可能会耗费大量时间但由于这种交叉检验只适用于小型数据集因此并不重要现在我们可以转向回归问题了回归问题的好处在于除了分层折交叉检验之外我们可以在回归问题上使用上述所有交叉检验技术也就是说我们不能直接使用分层折交叉检验但有一些方法可以稍稍改变问题从而在回归问题中使用分层折交叉检验大多数情况下简单的折交叉检验适用于任何回归问题但是如果发现目标分布不一致就可以使用分层折交叉检验要在回归问题中使用分层折交叉检验我们必须先将目标划分为若干个分层然后再以处理分类问题的相同方式使用分层折交叉检验选择合适的分层数有几种选择如果样本量很大那么就不需要考虑分层的数量只需将数据分为或层即可如果样本数不多则可以使用这样的简单规则来计算适当的分层数其中是数据集中的样本数该函数如图所示图利用斯特格法则绘制样本与箱数对比图让我们制作一个回归数据集样本并尝试应用分层折交叉检验如下面的代码段所示为回归问题进行分层折交叉验证导入需要的库创建分折的函数创建一个新列叫做并用来填充随机打乱数据的行使用规则计算的数量使用的函数进行目标变量的分箱初始化类填充新的列注意我们使用的是而不是实际的目标变量删除列返回包含的数据主程序开始创建一个带有个样本个特征和个目标变量的样本数据集使用数组创建一个数据框创建交叉检验是构建机器学习模型的第一步也是最基本的一步如果要做特征工程首先要拆分数据如果要建立模型首先要拆分数据如果你有一个好的交叉检验方案其中验证数据能够代表训练数据和真实世界的数据那么你就能建立一个具有高度通用性的好的机器学习模型本章介绍的交叉检验类型几乎适用于所有机器学习问题不过你必须记住交叉检验也在很大程度上取决于数据你可能需要根据你的问题和数据采用新的交叉检验形式例如假设我们有一个问题希望建立一个模型从患者的皮肤图像中检测出皮肤癌我们的任务是建立一个二元分类器该分类器接收输入图像并预测其良性或恶性的概率在这类数据集中训练数据集中可能有同一患者的多张图像因此要在这里建立一个良好的交叉检验系统必须有分层的折交叉检验但也必须确保训练数据中的患者不会出现在验证数据中幸运的是提供了一种称为的交叉检验类型在这里患者可以被视为组但遗憾的是无法将与结合起来所以你需要自己动手我把它作为一个练习留给读者的练习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-05 00:00:00',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://littlepenguin66.github.io/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/littlepenguin66" title="Github"><img class="back-menu-item-icon" src="anzhiyu-icon-github" alt="Github"/><span class="back-menu-item-text">Github</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">LTPG66</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 留言</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> Search</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> Newest Comments</span></div><div class="aside-list"><span>loading...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.05rem;">前端<sup>2</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/" style="font-size: 1.05rem;">数学物理方程<sup>1</sup></a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem;">机器学习<sup>15</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">May 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">17</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">April 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/AAAMLP/" itemprop="url">AAAMLP</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>机器学习</span></a></span></div></div><h1 class="post-title" itemprop="name headline">交叉检验</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-05-04T16:00:00.000Z" title="Created 2024-05-05 00:00:00">2024-05-05</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-05-04T16:00:00.000Z" title="Updated 2024-05-05 00:00:00">2024-05-05</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为北京"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>北京</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E4%BA%A4%E5%8F%89%E6%A3%80%E9%AA%8C/"><header><a class="post-meta-categories" href="/categories/AAAMLP/" itemprop="url">AAAMLP</a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" tabindex="-1" itemprop="url">机器学习</a><h1 id="CrawlerTitle" itemprop="name headline">交叉检验</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">little_penguin66</span><time itemprop="dateCreated datePublished" datetime="2024-05-04T16:00:00.000Z" title="Created 2024-05-05 00:00:00">2024-05-05</time><time itemprop="dateCreated datePublished" datetime="2024-05-04T16:00:00.000Z" title="Updated 2024-05-05 00:00:00">2024-05-05</time></header><h1>交叉检验</h1>
+<blockquote>
+<p>博客就像与人进行长时间的对话一样，因此你所喜欢谈论的事情与你的激情密切相关是有道理的。</p>
+</blockquote>
+<h2 id="引言">引言</h2>
+<ul>
+<li>承诺声明</li>
+<li>即将到来的内容的预览</li>
+</ul>
+<h2 id="概述">概述</h2>
+<ul>
+<li>简单的定义</li>
+<li>示例</li>
+<li>过渡到下一节</li>
+</ul>
+<h2 id="步骤">步骤</h2>
+<ul>
+<li>每个步骤的详细说明</li>
+</ul>
+<h1>结论</h1>
+<ul>
+<li>提醒指南的有用性</li>
+<li>重申你的话题的重要性</li>
+<li>呼吁行动</li>
+</ul>
+<h1>清单</h1>
+<p>灵感 ⛅</p>
+<ul>
+<li>[ ] 阅读启发我的文章和观看视频</li>
+<li>[ ] 用子弹点列出我想写的主题</li>
+<li>[ ] 重新排列这些子弹点以形成思路<br>
+草稿 ✏️</li>
+<li>[ ] 将这些子弹点扩展成句子/文本</li>
+<li>[ ] 审阅文档<br>
+准备发布 🌐</li>
+<li>[ ] 拟定 5 个标题并选择一个</li>
+<li>[ ] 校对全文的错别字</li>
+<li>[ ] 预览文本</li>
+<li>[ ] 发布或安排帖子</li>
+<li>[ ] 在社交媒体上推广</li>
+</ul>
+<h1>交叉检验</h1>
+<p>在上一章中，我们没有建立任何模型。原因很简单，在创建任何一种机器学习模型之前，我们必须知道什么是交叉检验，以及如何根据数据集选择最佳交叉检验数据集。</p>
+<p>那么，什么是<strong>交叉检验</strong>，我们为什么要关注它？</p>
+<h1>交叉检验</h1>
+<blockquote>
+<p>博客就像与人进行长时间的对话一样，因此你所喜欢谈论的事情与你的激情密切相关是有道理的。</p>
+</blockquote>
+<h2 id="引言-2">引言</h2>
+<ul>
+<li>承诺声明</li>
+<li>即将到来的内容的预览</li>
+</ul>
+<h2 id="概述-2">概述</h2>
+<ul>
+<li>简单的定义</li>
+<li>示例</li>
+<li>过渡到下一节</li>
+</ul>
+<h2 id="步骤-2">步骤</h2>
+<ul>
+<li>每个步骤的详细说明</li>
+</ul>
+<h1>结论</h1>
+<ul>
+<li>提醒指南的有用性</li>
+<li>重申你的话题的重要性</li>
+<li>呼吁行动</li>
+</ul>
+<h1>清单</h1>
+<p>灵感 ⛅</p>
+<ul>
+<li>[ ] 阅读启发我的文章和观看视频</li>
+<li>[ ] 用子弹点列出我想写的主题</li>
+<li>[ ] 重新排列这些子弹点以形成思路<br>
+草稿 ✏️</li>
+<li>[ ] 将这些子弹点扩展成句子/文本</li>
+<li>[ ] 审阅文档<br>
+准备发布 🌐</li>
+<li>[ ] 拟定 5 个标题并选择一个</li>
+<li>[ ] 校对全文的错别字</li>
+<li>[ ] 预览文本</li>
+<li>[ ] 发布或安排帖子</li>
+<li>[ ] 在社交媒体上推广</li>
+</ul>
+<p>关于什么是交叉检验，# 交叉检验</p>
+<blockquote>
+<p>博客就像与人进行长时间的对话一样，因此你所喜欢谈论的事情与你的激情密切相关是有道理的。</p>
+</blockquote>
+<h2 id="引言-3">引言</h2>
+<ul>
+<li>承诺声明</li>
+<li>即将到来的内容的预览</li>
+</ul>
+<h2 id="概述-3">概述</h2>
+<ul>
+<li>简单的定义</li>
+<li>示例</li>
+<li>过渡到下一节</li>
+</ul>
+<h2 id="步骤-3">步骤</h2>
+<ul>
+<li>每个步骤的详细说明</li>
+</ul>
+<h1>结论</h1>
+<ul>
+<li>提醒指南的有用性</li>
+<li>重申你的话题的重要性</li>
+<li>呼吁行动</li>
+</ul>
+<h1>清单</h1>
+<p>灵感 ⛅</p>
+<ul>
+<li>[ ] 阅读启发我的文章和观看视频</li>
+<li>[ ] 用子弹点列出我想写的主题</li>
+<li>[ ] 重新排列这些子弹点以形成思路<br>
+草稿 ✏️</li>
+<li>[ ] 将这些子弹点扩展成句子/文本</li>
+<li>[ ] 审阅文档<br>
+准备发布 🌐</li>
+<li>[ ] 拟定 5 个标题并选择一个</li>
+<li>[ ] 校对全文的错别字</li>
+<li>[ ] 预览文本</li>
+<li>[ ] 发布或安排帖子</li>
+<li>[ ] 在社交媒体上推广<br>
+我们可以找到多种定义。我的定义只有一句话：交叉检验是构建机器学习模型过程中的一个步骤，它可以帮助我们确保模型准确拟合数据，同时确保我们不会过拟合。但这又引出了另一个词：<strong>过拟合</strong>。</li>
+</ul>
+<p>要解释过拟合，我认为最好先看一个数据集。有一个相当有名的红酒质量数据集（<strong>red wine quality dataset</strong>）。这个数据集有 11 个不同的特征，这些特征决定了红酒的质量。</p>
+<p>这些属性包括：</p>
+<ul>
+<li>固定酸度（fixed acidity）</li>
+<li>挥发性酸度（volatile acidity）</li>
+<li>柠檬酸（citric acid）</li>
+<li>残留糖（residual sugar）</li>
+<li>氯化物（chlorides）</li>
+<li>游离二氧化硫（free sulfur dioxide）</li>
+<li>二氧化硫总量（total sulfur dioxide）</li>
+<li>密度（density）</li>
+<li>PH 值（pH）</li>
+<li>硫酸盐（sulphates）</li>
+<li>酒精（alcohol）</li>
+</ul>
+<p>根据这些不同特征，我们需要预测红葡萄酒的质量，质量值介于 0 到 10 之间。</p>
+<p>让我们看看这些数据是怎样的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df = pd.read_csv(<span class="string">&quot;winequality-red.csv&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLP_page14_image.png" alt=""></p>
+<p align="center"><b>图 1:红葡萄酒质量数据集简单展示</b> </p>
+<p>我们可以将这个问题视为分类问题，也可以视为回归问题。为了简单起见，我们选择分类。然而，这个数据集值包含 6 种质量值。因此，我们将所有质量值映射到 0 到 5 之间。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一个映射字典，用于将质量值从 0 到 5 进行映射</span></span><br><span class="line">quality_mapping = &#123;</span><br><span class="line"> <span class="number">3</span>: <span class="number">0</span>,</span><br><span class="line"> <span class="number">4</span>: <span class="number">1</span>,</span><br><span class="line"> <span class="number">5</span>: <span class="number">2</span>,</span><br><span class="line"> <span class="number">6</span>: <span class="number">3</span>,</span><br><span class="line"> <span class="number">7</span>: <span class="number">4</span>,</span><br><span class="line"> <span class="number">8</span>: <span class="number">5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 你可以使用 pandas 的 map 函数以及任何字典，</span></span><br><span class="line"><span class="comment"># 来转换给定列中的值为字典中的值</span></span><br><span class="line">df.loc[:, <span class="string">&quot;quality&quot;</span>] = df.quality.<span class="built_in">map</span>(quality_mapping)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>当我们看大这些数据并将其视为一个分类问题时，我们脑海中会浮现出很多可以应用的算法，也许，我们可以使用神经网络。但是，如果我们从一开始就深入研究神经网络，那就有点牵强了。所以，让我们从简单的、我们也能可视化的东西开始：决策树。</p>
+<p>在开始了解什么是过拟合之前，我们先将数据分为两部分。这个数据集有 1599 个样本。我们保留 1000 个样本用于训练，599 个样本作为一个单独的集合。</p>
+<p>以下代码可以轻松完成划分：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 frac=1 的 sample 方法来打乱 dataframe</span></span><br><span class="line"><span class="comment"># 由于打乱后索引会改变，所以我们重置索引</span></span><br><span class="line">df = df.sample(frac=<span class="number">1</span>).reset_index(drop=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选取前 1000 行作为训练数据</span></span><br><span class="line">df_train = df.head(<span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选取最后的 599 行作为测试/验证数据</span></span><br><span class="line">df_test = df.tail(<span class="number">599</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>现在，我们将在训练集上使用 scikit-learn 训练一个决策树模型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 scikit-learn 导入需要的模块</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> metrics</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化一个决策树分类器，设置最大深度为 3</span></span><br><span class="line">clf = tree.DecisionTreeClassifier(max_depth=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选择你想要训练模型的列</span></span><br><span class="line"><span class="comment"># 这些列作为模型的特征</span></span><br><span class="line">cols = [<span class="string">&#x27;fixed acidity&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;volatile acidity&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;citric acid&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;residual sugar&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;chlorides&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;free sulfur dioxide&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;total sulfur dioxide&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;density&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;pH&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;sulphates&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;alcohol&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用之前映射的质量以及提供的特征来训练模型</span></span><br><span class="line">clf.fit(df_train[cols], df_train.quality)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>请注意，我将决策树分类器的最大深度（max_depth）设为 3。该模型的所有其他参数均保持默认值。现在，我们在训练集和测试集上测试该模型的准确性：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在训练集上生成预测</span></span><br><span class="line">train_predictions = clf.predict(df_train[cols])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在测试集上生成预测</span></span><br><span class="line">test_predictions = clf.predict(df_test[cols])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算训练数据集上预测的准确度</span></span><br><span class="line">train_accuracy = metrics.accuracy_score(</span><br><span class="line"> df_train.quality, train_predictions</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算测试数据集上预测的准确度</span></span><br><span class="line">test_accuracy = metrics.accuracy_score(</span><br><span class="line"> df_test.quality, test_predictions</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>训练和测试的准确率分别为 58.9%和 54.25%。现在，我们将最大深度（max_depth）增加到 7，并重复上述过程。这样，训练准确率为 76.6%，测试准确率为 57.3%。在这里，我们使用准确率，主要是因为它是最直接的指标。对于这个问题来说，它可能不是最好的指标。我们可以根据最大深度（max_depth）的不同值来计算这些准确率，并绘制曲线图。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意：这段代码在 Jupyter 笔记本中编写</span></span><br><span class="line"><span class="comment"># 导入 scikit-learn 的 tree 和 metrics</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> metrics</span><br><span class="line"><span class="comment"># 导入 matplotlib 和 seaborn</span></span><br><span class="line"><span class="comment"># 用于绘图</span></span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置全局标签文本的大小</span></span><br><span class="line">matplotlib.rc(<span class="string">&#x27;xtick&#x27;</span>, labelsize=<span class="number">20</span>)</span><br><span class="line">matplotlib.rc(<span class="string">&#x27;ytick&#x27;</span>, labelsize=<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 确保图表直接在笔记本内显示</span></span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化用于存储训练和测试准确度的列表</span></span><br><span class="line"><span class="comment"># 我们从 50% 的准确度开始</span></span><br><span class="line">train_accuracies = [<span class="number">0.5</span>]</span><br><span class="line">test_accuracies = [<span class="number">0.5</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历几个不同的树深度值</span></span><br><span class="line"><span class="keyword">for</span> depth <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">25</span>):</span><br><span class="line">    <span class="comment"># 初始化模型</span></span><br><span class="line">    clf = tree.DecisionTreeClassifier(max_depth=depth)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 选择用于训练的列/特征</span></span><br><span class="line">    cols = [</span><br><span class="line">        <span class="string">&#x27;fixed acidity&#x27;</span>, <span class="string">&#x27;volatile acidity&#x27;</span>, <span class="string">&#x27;citric acid&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;residual sugar&#x27;</span>, <span class="string">&#x27;chlorides&#x27;</span>, <span class="string">&#x27;free sulfur dioxide&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;total sulfur dioxide&#x27;</span>, <span class="string">&#x27;density&#x27;</span>, <span class="string">&#x27;pH&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;sulphates&#x27;</span>, <span class="string">&#x27;alcohol&#x27;</span></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在给定特征上拟合模型</span></span><br><span class="line">    clf.fit(df_train[cols], df_train.quality)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建训练和测试预测</span></span><br><span class="line">    train_predictions = clf.predict(df_train[cols])</span><br><span class="line">    test_predictions = clf.predict(df_test[cols])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算训练和测试准确度</span></span><br><span class="line">    train_accuracy = metrics.accuracy_score(</span><br><span class="line">        df_train.quality, train_predictions</span><br><span class="line">    )</span><br><span class="line">    test_accuracy = metrics.accuracy_score(</span><br><span class="line">        df_test.quality, test_predictions</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 添加准确度到列表</span></span><br><span class="line">    train_accuracies.append(train_accuracy)</span><br><span class="line">    test_accuracies.append(test_accuracy)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 matplotlib 和 seaborn 创建两个图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">5</span>))</span><br><span class="line">sns.set_style(<span class="string">&quot;whitegrid&quot;</span>)</span><br><span class="line">plt.plot(train_accuracies, label=<span class="string">&quot;train accuracy&quot;</span>)</span><br><span class="line">plt.plot(test_accuracies, label=<span class="string">&quot;test accuracy&quot;</span>)</span><br><span class="line">plt.legend(loc=<span class="string">&quot;upper left&quot;</span>, prop=&#123;<span class="string">&#x27;size&#x27;</span>: <span class="number">15</span>&#125;)</span><br><span class="line">plt.xticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">26</span>, <span class="number">5</span>))</span><br><span class="line">plt.xlabel(<span class="string">&quot;max_depth&quot;</span>, size=<span class="number">20</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;accuracy&quot;</span>, size=<span class="number">20</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这将生成如图 2 所示的曲线图。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLP_page19_image.png" alt=""></p>
+<p align="center"><b>图 2：不同 max_depth 训练和测试准确率。</b> </p>
+<p>我们可以看到，当最大深度（max_depth）的值为 14 时，测试数据的得分最高。随着我们不断增加这个参数的值，测试准确率会保持不变或变差，但训练准确率会不断提高。这说明，随着最大深度（max_depth）的增加，决策树模型对训练数据的学习效果越来越好，但测试数据的性能却丝毫没有提高。</p>
+<p><strong>这就是所谓的过拟合</strong>。</p>
+<p>模型在训练集上完全拟合，而在测试集上却表现不佳。这意味着模型可以很好地学习训练数据，但无法泛化到未见过的样本上。在上面的数据集中，我们可以建立一个最大深度（max_depth）非常高的模型，它在训练数据上会有出色的结果，但这种模型并不实用，因为它在真实世界的样本或实时数据上不会提供类似的结果。</p>
+<p>有人可能会说，这种方法并没有过拟合，因为测试集的准确率基本保持不变。过拟合的另一个定义是，当我们不断提高训练损失时，测试损失也在增加。这种情况在神经网络中非常常见。</p>
+<p>每当我们训练一个神经网络时，都必须在训练期间监控训练集和测试集的损失。如果我们有一个非常大的网络来处理一个非常小的数据集（即样本数非常少），我们就会观察到，随着我们不断训练，训练集和测试集的损失都会减少。但是，在某个时刻，测试损失会达到最小值，之后，即使训练损失进一步减少，测试损失也会开始增加。我们必须在验证损失达到最小值时停止训练。</p>
+<p><strong>这是对过拟合最常见的解释</strong>。</p>
+<p>奥卡姆剃刀用简单的话说，就是不要试图把可以用简单得多的方法解决的事情复杂化。换句话说，最简单的解决方案就是最具通用性的解决方案。一般来说，只要你的模型不符合奥卡姆剃刀原则，就很可能是过拟合。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLP_page20_image.png" alt=""></p>
+<p align="center"><b>图 3：过拟合的最一般定义</b> </p>
+<p>现在我们可以回到交叉检验。</p>
+<p>在解释过拟合时，我决定将数据分为两部分。我在其中一部分上训练模型，然后在另一部分上检查其性能。这也是交叉检验的一种，通常被称为 “暂留集”（<strong>hold-out set</strong>）。当我们拥有大量数据，而模型推理是一个耗时的过程时，我们就会使用这种（交叉）验证。</p>
+<p>交叉检验有许多不同的方法，它是建立一个良好的机器学习模型的最关键步骤。<strong>选择正确的交叉检验</strong>取决于所处理的数据集，在一个数据集上适用的交叉检验也可能不适用于其他数据集。不过，有几种类型的交叉检验技术最为流行和广泛使用。</p>
+<p>其中包括：</p>
+<ul>
+<li>k 折交叉检验</li>
+<li>分层 k 折交叉检验</li>
+<li>暂留交叉检验</li>
+<li>留一交叉检验</li>
+<li>分组 k 折交叉检验</li>
+</ul>
+<p>交叉检验是将训练数据分层几个部分，我们在其中一部分上训练模型，然后在其余部分上进行测试。请看图 4。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLP_page21_image.png" alt=""></p>
+<p align="center"><b>图 4：将数据集拆分为训练集和验证集</b> </p>
+<p>图 4 和图 5 说明，当你得到一个数据集来构建机器学习模型时，你会把它们分成<strong>两个不同的集：训练集和验证集</strong>。很多人还会将其分成第三组，称之为测试集。不过，我们将只使用两个集。如你所见，我们将样本和与之相关的目标进行了划分。我们可以将数据分为 k 个互不关联的不同集合。这就是所谓的 <strong>k 折交叉检验</strong>。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLP_page21_image_1.png" alt=""></p>
+<p align="center"><b>图 5：K 折交叉检验</b> </p>
+<p>我们可以使用 scikit-learn 中的 KFold 将任何数据分割成 k 个相等的部分。每个样本分配一个从 0 到 k-1 的值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入 pandas 和 scikit-learn 的 model_selection 模块</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment"># 训练数据存储在名为 train.csv 的 CSV 文件中</span></span><br><span class="line">    df = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 我们创建一个名为 kfold 的新列，并用 -1 填充</span></span><br><span class="line">    df[<span class="string">&quot;kfold&quot;</span>] = -<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 接下来的步骤是随机打乱数据的行</span></span><br><span class="line">    df = df.sample(frac=<span class="number">1</span>).reset_index(drop=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 从 model_selection 模块初始化 kfold 类</span></span><br><span class="line">    kf = model_selection.KFold(n_splits=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 填充新的 kfold 列（enumerate的作用是返回一个迭代器）</span></span><br><span class="line">    <span class="keyword">for</span> fold, (trn_, val_) <span class="keyword">in</span> <span class="built_in">enumerate</span>(kf.split(X=df)):</span><br><span class="line">        df.loc[val_, <span class="string">&#x27;kfold&#x27;</span>] = fold</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 保存带有 kfold 列的新 CSV 文件</span></span><br><span class="line">    df.to_csv(<span class="string">&quot;train_folds.csv&quot;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>几乎所有类型的数据集都可以使用此流程。例如，当数据图像时，您可以创建一个包含图像 ID、图像位置和图像标签的 CSV，然后使用上述流程。</p>
+<p>另一种重要的交叉检验类型是<strong>分层 k 折交叉检验</strong>。如果你有一个偏斜的二元分类数据集，其中正样本占 90%，负样本只占 10%，那么你就不应该使用随机 k 折交叉。对这样的数据集使用简单的 k 折交叉检验可能会导致折叠样本全部为负样本。在这种情况下，我们更倾向于使用分层 k 折交叉检验。分层 k 折交叉检验可以保持每个折中标签的比例不变。因此，在每个折叠中，都会有相同的 90% 正样本和 10% 负样本。因此，无论您选择什么指标进行评估，都会在所有折叠中得到相似的结果。</p>
+<p>修改创建 k 折交叉检验的代码以创建分层 k 折交叉检验也很容易。我们只需将 model_selection.KFold 更改为 model_selection.StratifiedKFold ，并在 kf.split(…) 函数中指定要分层的目标列。我们假设 CSV 数据集有一列名为 “target” ，并且是一个分类问题。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入 pandas 和 scikit-learn 的 model_selection 模块</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment"># 训练数据保存在名为 train.csv 的 CSV 文件中</span></span><br><span class="line">    df = pd.read_csv(<span class="string">&quot;train.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 添加一个新列 kfold，并用 -1 初始化</span></span><br><span class="line">    df[<span class="string">&quot;kfold&quot;</span>] = -<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 随机打乱数据行</span></span><br><span class="line">    df = df.sample(frac=<span class="number">1</span>).reset_index(drop=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取目标变量</span></span><br><span class="line">    y = df.target.values</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 初始化 StratifiedKFold 类，设置折数（folds）为 5</span></span><br><span class="line">    kf = model_selection.StratifiedKFold(n_splits=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用 StratifiedKFold 对象的 split 方法来获取训练和验证索引</span></span><br><span class="line">    <span class="keyword">for</span> f, (t_, v_) <span class="keyword">in</span> <span class="built_in">enumerate</span>(kf.split(X=df, y=y)):</span><br><span class="line">        df.loc[v_, <span class="string">&#x27;kfold&#x27;</span>] = f</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 保存包含 kfold 列的新 CSV 文件</span></span><br><span class="line">    df.to_csv(<span class="string">&quot;train_folds.csv&quot;</span>, index=<span class="literal">False</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>对于葡萄酒数据集，我们来看看标签的分布情况。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b = sns.countplot(x=<span class="string">&#x27;quality&#x27;</span>, data=df)</span><br><span class="line">b.set_xlabel(<span class="string">&quot;quality&quot;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line">b.set_ylabel(<span class="string">&quot;count&quot;</span>, fontsize=<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+<p>请注意，我们继续上面的代码。因此，我们已经转换了目标值。从图 6 中我们可以看出，质量偏差很大。有些类别有很多样本，有些则没有那么多。如果我们进行简单的 k 折交叉检验，那么每个折叠中的目标值分布都不会相同。因此，在这种情况下，我们选择分层 k 折交叉检验。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLP_page24_image.png" alt=""></p>
+<p align="center"><b>图 6：葡萄酒数据集中 "质量" 分布情况</b> </p>
+<p>规则很简单，如果是标准分类问题，就盲目选择分层 k 折交叉检验。</p>
+<p>但如果数据量很大，该怎么办呢？假设我们有 100 万个样本。5 倍交叉检验意味着在 800k 个样本上进行训练，在 200k 个样本上进行验证。根据我们选择的算法，对于这样规模的数据集来说，训练甚至验证都可能非常昂贵。在这种情况下，我们可以选择<strong>暂留交叉检验</strong>。</p>
+<p>创建保持结果的过程与分层 k 折交叉检验相同。对于拥有 100 万个样本的数据集，我们可以创建 10 个折叠而不是 5 个，并保留其中一个折叠作为保留样本。这意味着，我们将有 10 万个样本被保留下来，我们将始终在这个样本集上计算损失、准确率和其他指标，并在 90 万个样本上进行训练。</p>
+<p>在处理时间序列数据时，暂留交叉检验也非常常用。假设我们要解决的问题是预测一家商店 2020 年的销售额，而我们得到的是 2015-2019 年的所有数据。在这种情况下，你可以选择 2019 年的所有数据作为保留数据，然后在 2015 年至 2018 年的所有数据上训练你的模型。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLP_page25_image.png" alt=""></p>
+<p align="center"><b>图 7：时间序列数据示例</b> </p>
+<p>在图 7 所示的示例中，假设我们的任务是预测从时间步骤 31 到 40 的销售额。我们可以保留 21 至 30 步的数据，然后从 0 步到 20 步训练模型。需要注意的是，在预测 31 步至 40 步时，应将 21 步至 30 步的数据纳入模型，否则，模型的性能将大打折扣。</p>
+<p>在很多情况下，我们必须处理小型数据集，而创建大型验证集意味着模型学习会丢失大量数据。在这种情况下，我们可以选择留一交叉检验，相当于特殊的 k 则交叉检验其中 k=N ，N 是数据集中的样本数。这意味着在所有的训练折叠中，我们将对除 1 之外的所有数据样本进行训练。这种类型的交叉检验的折叠数与数据集中的样本数相同。</p>
+<p>需要注意的是，如果模型的速度不够快，这种类型的交叉检验可能会耗费大量时间，但由于这种交叉检验只适用于小型数据集，因此并不重要。</p>
+<p>现在我们可以转向回归问题了。回归问题的好处在于，除了分层 k 折交叉检验之外，我们可以在回归问题上使用上述所有交叉检验技术。也就是说，我们不能直接使用分层 k 折交叉检验，但有一些方法可以稍稍改变问题，从而在回归问题中使用分层 k 折交叉检验。大多数情况下，简单的 k 折交叉检验适用于任何回归问题。但是，如果发现目标分布不一致，就可以使用分层 k 折交叉检验。</p>
+<p>要在回归问题中使用分层 k 折交叉检验，我们必须先将目标划分为若干个分层，然后再以处理分类问题的相同方式使用分层 k 折交叉检验。选择合适的分层数有几种选择。如果样本量很大（&gt; 10k，&gt; 100k），那么就不需要考虑分层的数量。只需将数据分为 10 或 20 层即可。如果样本数不多，则可以使用 Sturge’s Rule 这样的简单规则来计算适当的分层数。</p>
+<p>Sturge’s Rule：</p>
+<p>$$<br>
+Number of Bins = 1 + log_2(N)<br>
+$$</p>
+<p>其中 $N$ 是数据集中的样本数。该函数如图 8 所示。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLP_page26_image.png" alt=""></p>
+<p align="center"><b>图 8：利用斯特格法则绘制样本与箱数对比图</b> </p>
+<p>让我们制作一个回归数据集样本，并尝试应用分层 k 折交叉检验，如下面的 python 代码段所示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># stratified-kfold for regression</span></span><br><span class="line"><span class="comment"># 为回归问题进行分层K-折交叉验证</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入需要的库</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> model_selection</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建分折（folds）的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_folds</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="comment"># 创建一个新列叫做kfold，并用-1来填充</span></span><br><span class="line">    data[<span class="string">&quot;kfold&quot;</span>] = -<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 随机打乱数据的行</span></span><br><span class="line">    data = data.sample(frac=<span class="number">1</span>).reset_index(drop=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用Sturge规则计算bin的数量</span></span><br><span class="line">    num_bins = <span class="built_in">int</span>(np.floor(<span class="number">1</span> + np.log2(<span class="built_in">len</span>(data))))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用pandas的cut函数进行目标变量（target）的分箱</span></span><br><span class="line">    data.loc[:, <span class="string">&quot;bins&quot;</span>] = pd.cut(</span><br><span class="line">        data[<span class="string">&quot;target&quot;</span>], bins=num_bins, labels=<span class="literal">False</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 初始化StratifiedKFold类</span></span><br><span class="line">    kf = model_selection.StratifiedKFold(n_splits=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 填充新的kfold列</span></span><br><span class="line">    <span class="comment"># 注意：我们使用的是bins而不是实际的目标变量（target）！</span></span><br><span class="line">    <span class="keyword">for</span> f, (t_, v_) <span class="keyword">in</span> <span class="built_in">enumerate</span>(kf.split(X=data, y=data.bins.values)):</span><br><span class="line">        data.loc[v_, <span class="string">&#x27;kfold&#x27;</span>] = f</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 删除bins列</span></span><br><span class="line">    data = data.drop(<span class="string">&quot;bins&quot;</span>, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 返回包含folds的数据</span></span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 主程序开始</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment"># 创建一个带有15000个样本、100个特征和1个目标变量的样本数据集</span></span><br><span class="line">    X, y = datasets.make_regression(</span><br><span class="line">        n_samples=<span class="number">15000</span>, n_features=<span class="number">100</span>, n_targets=<span class="number">1</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># 使用numpy数组创建一个数据框</span></span><br><span class="line">    df = pd.DataFrame(</span><br><span class="line">        X,</span><br><span class="line">        columns=[<span class="string">f&quot;f_<span class="subst">&#123;i&#125;</span>&quot;</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(X.shape[<span class="number">1</span>])]</span><br><span class="line">    )</span><br><span class="line">    df.loc[:, <span class="string">&quot;target&quot;</span>] = y</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建folds</span></span><br><span class="line">    df = create_folds(df)</span><br></pre></td></tr></table></figure>
+<p>交叉检验是构建机器学习模型的第一步，也是最基本的一步。如果要做特征工程，首先要拆分数据。如果要建立模型，首先要拆分数据。如果你有一个好的交叉检验方案，其中验证数据能够代表训练数据和真实世界的数据，那么你就能建立一个具有高度通用性的好的机器学习模型。</p>
+<p>本章介绍的交叉检验类型几乎适用于所有机器学习问题。不过，你必须记住，交叉检验也在很大程度上取决于数据，你可能需要根据你的问题和数据采用新的交叉检验形式。</p>
+<p>例如，假设我们有一个问题，希望建立一个模型，从患者的皮肤图像中检测出皮肤癌。我们的任务是建立一个二元分类器，该分类器接收输入图像并预测其良性或恶性的概率。</p>
+<p>在这类数据集中，训练数据集中可能有同一患者的多张图像。因此，要在这里建立一个良好的交叉检验系统，必须有分层的 k 折交叉检验，但也必须确保训练数据中的患者不会出现在验证数据中。幸运的是，scikit-learn 提供了一种称为 GroupKFold 的交叉检验类型。 在这里，患者可以被视为组。 但遗憾的是，scikit-learn 无法将 GroupKFold 与 StratifiedKFold 结合起来。所以你需要自己动手。我把它作为一个练习留给读者的练习。</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">little_penguin66</div><div class="post-copyright__author_desc">Minimalism is the best!</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E4%BA%A4%E5%8F%89%E6%A3%80%E9%AA%8C/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E4%BA%A4%E5%8F%89%E6%A3%80%E9%AA%8C/')">交叉检验</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E4%BA%A4%E5%8F%89%E6%A3%80%E9%AA%8C/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=交叉检验&amp;url=http://example.com/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E4%BA%A4%E5%8F%89%E6%A3%80%E9%AA%8C/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>机器学习<span class="tagsPageCount">15</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%A4%84%E7%90%86%E5%88%86%E7%B1%BB%E5%8F%98%E9%87%8F/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">处理分类变量</div></div></a></div><div class="next-post pull-right"><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/index/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">AAAMLP前言</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/uncategorized/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/" title="九种常见激活函数"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/activationFuction.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-02</div><div class="title">九种常见激活函数</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/index/" title="AAAMLP前言"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-05</div><div class="title">AAAMLP前言</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/" title="准备环境"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">准备环境</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BB%A3%E7%A0%81%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/" title="可重复代码和模型方法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">可重复代码和模型方法</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95/" title="图像分类和分割方法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">图像分类和分割方法</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E6%88%96%E5%9B%9E%E5%BD%92%E6%96%B9%E6%B3%95/" title="文本分类或回归方法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">文本分类或回归方法</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> Comment</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有没有<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，也没<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你不可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">little_penguin66</h1><div class="author-info__desc">Minimalism is the best!</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/littlepenguin66" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/34685008" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>Announcement</span></div><div class="announcement_content">欢迎来看我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">交叉检验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.2.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.3.</span> <span class="toc-text">步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">清单</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">交叉检验</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">交叉检验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80-2"><span class="toc-number">5.1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-2"><span class="toc-number">5.2.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-2"><span class="toc-number">5.3.</span> <span class="toc-text">步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">清单</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80-3"><span class="toc-number">7.1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-3"><span class="toc-number">7.2.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-3"><span class="toc-number">7.3.</span> <span class="toc-text">步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">清单</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/" title="准备环境">准备环境</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BB%A3%E7%A0%81%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/" title="可重复代码和模型方法">可重复代码和模型方法</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95/" title="图像分类和分割方法">图像分类和分割方法</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E6%88%96%E5%9B%9E%E5%BD%92%E6%96%B9%E6%B3%95/" title="文本分类或回归方法">文本分类或回归方法</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E6%97%A0%E7%9B%91%E7%9D%A3%E5%92%8C%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/" title="无监督和有监督学习">无监督和有监督学习</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="/2201529520@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/littlepenguin66" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/34685008" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div><div class="copyright">&copy;2024 By little_penguin66</div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a></p></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://littlepenguin66.github.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/littlepenguin66" title="Github"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="anzhiyu-icon-github" alt="Github"/><span class="back-menu-item-text">Github</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 留言</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Python/" style="font-size: 0.88rem;">Python<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 0.88rem;">前端<sup>2</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/" style="font-size: 0.88rem;">数学物理方程<sup>1</sup></a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 0.88rem;">机器学习<sup>15</sup></a></div></div><hr/></div></div><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keybordList"><div class="keybordItem"><div class="keyGroup"><div class="key">shift K</div></div><div class="keyContent"><div class="content">关闭快捷键功能</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift A</div></div><div class="keyContent"><div class="content">打开/关闭中控台</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift D</div></div><div class="keyContent"><div class="content">深色/浅色显示模式</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift S</div></div><div class="keyContent"><div class="content">站内搜索</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift R</div></div><div class="keyContent"><div class="content">随机访问</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift H</div></div><div class="keyContent"><div class="content">返回首页</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift F</div></div><div class="keyContent"><div class="content">友链鱼塘</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift L</div></div><div class="keyContent"><div class="content">友链页面</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift P</div></div><div class="keyContent"><div class="content">关于本站</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift I</div></div><div class="keyContent"><div class="content">原版/本站右键菜单</div></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch-commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.4"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/29/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2024 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 little_penguin66 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.cbd.int/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://jrz66-comment.hf.space',
+      region: 'ap-east-1',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.25/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://jrz66-comment.hf.space',
+      region: 'ap-east-1',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"><script async src="/js/anzhiyu/comment_barrage.js"></script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[image]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[link]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[code]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://jrz66-comment.hf.space',
+        region: 'ap-east-1',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "Unable to get the data, please make sure the settings are correct."
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.25/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += 'No Comment'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "annoymously@aml.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
