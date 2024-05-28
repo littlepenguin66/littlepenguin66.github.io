@@ -1,0 +1,646 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>PaddleDetection基础训练 | LTPG66</title><meta name="keywords" content="机器学习"><meta name="author" content="little_penguin66"><meta name="copyright" content="little_penguin66"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#18171d"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="PaddleDetection基础训练"><meta name="application-name" content="PaddleDetection基础训练"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#18171d"><meta property="og:type" content="article"><meta property="og:title" content="PaddleDetection基础训练"><meta property="og:url" content="http://example.com/%E6%9D%82%E5%AD%A6/PaddleDetection%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/index.html"><meta property="og:site_name" content="LTPG66"><meta property="og:description" content="paddlepaddle"><meta property="og:locale" content="en"><meta property="og:image" content="https://user-images.githubusercontent.com/48054808/160532560-34cf7a1f-d950-435e-90d2-4b0a679e5119.png"><meta property="article:author" content="little_penguin66"><meta property="article:tag" content="None"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://user-images.githubusercontent.com/48054808/160532560-34cf7a1f-d950-435e-90d2-4b0a679e5119.png"><meta name="description" content="paddlepaddle"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/favicon.ico"><link rel="canonical" href="http://example.com/%E6%9D%82%E5%AD%A6/PaddleDetection%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"ChatGLM","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: 'https://jrz66-comment.hf.space',
+  commentBarrageConfig:{"enable":true,"maxBarrage":1,"barrageTime":4000,"accessToken":"","mailMd5":""},
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: little_penguin66","link":"Link: ","source":"Source: LTPG66","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: {"enable":true,"delay":100,"shiftDelay":200},
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'LTPG66',
+  title: 'PaddleDetection基础训练',
+  postAI: 'PaddleDetection是一个基于百度PaddlePaddle框架的开源目标检测框架，提供了丰富的模型组件和端到端的开发套件。文章详细介绍了如何安装PaddleDetection，包括安装PaddlePaddle、克隆PaddleDetection仓库、安装其他依赖等步骤。然后文章介绍了如何配置模型训练的yml文件，包括数据集配置、优化器配置等。接着，文章介绍了如何使用tools/train.py文件进行模型训练，以及如何使用infer.py文件进行模型评估。最后，文章提供了模型的预测代码，包括预处理、加载模型、预测等步骤。整个过程详细且易于理解，对于想要使用PaddleDetection进行目标检测的开发者非常有帮助。',
+  pageFillDescription: 'PaddleDetection 简介, 安装, 环境要求, 安装说明, 1. 安装 PaddlePaddle, 2. 安装 PaddleDetection, 模型训练部分简介是百度框架下的一个开源目标检测框架集成了许多开箱即用的模型是一个端到端开发套件在提供丰富的模型组件和测试基准的同时注重端到端的产业落地应用通过打造产业级特色模型工具建设产业应用范例等手段帮助开发者实现数据准备模型选型模型训练模型部署的全流程打通快速进行落地应用安装环境要求位操作系统位版本位版本依赖版本关系版本版本备注默认使用动态图模式默认使用动态图模式默认使用动态图模式默认使用动态图模式默认使用动态图模式默认使用动态图模式默认使用动态图模式默认使用动态图模式大部分模型即可运行系列模型与依赖版本依赖安装说明安装更多版本或环境快速安装请参考快速安装文档更多安装方式例如或源码编译安装方法请参考安装文档请确保您的安装成功并且版本不低于需求版本使用以下命令进行验证在您的解释器中确认安装成功确认版本注意如果您希望在多卡环境下使用请首先安装安装注意安装方式只支持克隆仓库安装其他依赖编译安装注意如果下载代码较慢可尝试使用或者代理加速若您使用的是系统由于原版不支持依赖可能安装失败可采用第三方实现版本该版本仅支持若您使用的是的版本安装可能会报错您可通过先安装如解决该问题安装后确认测试通过测试通过后会提示如下信息模型训练部分的模型训练主要用的是这个文件但是在训练时需要预先配置基础模型如其结构如下多少个图片输出一次多少个保存一次参数权重正如文件内容所说需要配置中的五个文件其中如果是中自带的模型中就只要改选项且具体的优化器和训练配置就自己去文件中改以为例其的文件如下所示的需要指向个文件如上文则是但是把测试集与评估集设为同一个文件则是对输入图像的转换文件时优化器部分规定了模型训练的轮数和基础学习率配置完上文后只需要一个命令模型就会开始训练至于训练的轮数则取决于模型何时收敛可以在命令中加上将命令行保存到日志中方面查看数据训练完成后训练后参数会保存到文件夹下里面包含三个文件其中会包含每次保存的和最终的可以使用以下命令进行模型评估如果模型效果好的话就可以直接输出模型下面提供模型的预测文件使用此文件时需要确定能够读取到库中下的文件检测模型图像预处理检测模型预测结果检测模型写结果写文件',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-28 16:38:57',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://littlepenguin66.github.io/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/littlepenguin66" title="Github"><img class="back-menu-item-icon" src="anzhiyu-icon-github" alt="Github"/><span class="back-menu-item-text">Github</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">LTPG66</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 留言</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> Search</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> Newest Comments</span></div><div class="aside-list"><span>loading...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.05rem;">前端<sup>2</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/" style="font-size: 1.05rem;">数学物理方程<sup>1</sup></a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem;">机器学习<sup>17</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">May 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">19</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">April 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9D%82%E5%AD%A6/" itemprop="url">杂学</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>机器学习</span></a></span></div></div><h1 class="post-title" itemprop="name headline">PaddleDetection基础训练</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-05-27T16:00:00.000Z" title="Created 2024-05-28 00:00:00">2024-05-28</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-05-28T08:38:57.894Z" title="Updated 2024-05-28 16:38:57">2024-05-28</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为北京"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>北京</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://user-images.githubusercontent.com/48054808/160532560-34cf7a1f-d950-435e-90d2-4b0a679e5119.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><div class="post-ai-description"><div class="ai-title"><i class="anzhiyufont anzhiyu-icon-bilibili"></i><div class="ai-title-text">AI-摘要</div><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i><i class="anzhiyufont anzhiyu-icon-circle-dot" title="朗读摘要"></i><div id="ai-tag">ChatGLM GPT</div></div><div class="ai-explanation">AI初始化中...</div><div class="ai-btn-box"><div class="ai-btn-item">介绍自己 🙈</div><div class="ai-btn-item">生成本文简介 👋</div><div class="ai-btn-item">推荐相关文章 📖</div><div class="ai-btn-item">前往主页 🏠</div><div class="ai-btn-item" id="go-tianli-blog">前往爱发电购买</div></div><script data-pjax src="/js/anzhiyu/ai_abstract.js"></script></div><article class="post-content" id="article-container" itemscope itemtype="http://example.com/%E6%9D%82%E5%AD%A6/PaddleDetection%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/"><header><a class="post-meta-categories" href="/categories/%E6%9D%82%E5%AD%A6/" itemprop="url">杂学</a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" tabindex="-1" itemprop="url">机器学习</a><h1 id="CrawlerTitle" itemprop="name headline">PaddleDetection基础训练</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">little_penguin66</span><time itemprop="dateCreated datePublished" datetime="2024-05-27T16:00:00.000Z" title="Created 2024-05-28 00:00:00">2024-05-28</time><time itemprop="dateCreated datePublished" datetime="2024-05-28T08:38:57.894Z" title="Updated 2024-05-28 16:38:57">2024-05-28</time></header><h1 id="PaddleDetection-简介"><a href="#PaddleDetection-简介" class="headerlink" title="PaddleDetection 简介"></a>PaddleDetection 简介</h1><p>PaddleDetection 是百度框架 PaddlePaddle 下的一个开源目标检测框架，集成了许多开箱即用的模型，是一个端到端开发套件，在提供丰富的模型组件和测试基准的同时，注重端到端的产业落地应用，通过打造产业级特色模型|工具、建设产业应用范例等手段，帮助开发者实现数据准备、模型选型、模型训练、模型部署的全流程打通，快速进行落地应用。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
+<li>PaddlePaddle 2.3.2</li>
+<li>OS 64 位操作系统</li>
+<li>Python 3(3.5.1+/3.6/3.7/3.8/3.9/3.10)，64 位版本</li>
+<li>pip/pip3(9.0.1+)，64 位版本</li>
+<li>CUDA &gt;= 10.2</li>
+<li>cuDNN &gt;= 7.6</li>
+</ul>
+<p>PaddleDetection 依赖 PaddlePaddle 版本关系：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">PaddleDetection 版本</th>
+<th style="text-align:center">PaddlePaddle 版本</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">develop</td>
+<td style="text-align:center">&gt;=2.3.2</td>
+<td style="text-align:center">默认使用动态图模式</td>
+</tr>
+<tr>
+<td style="text-align:center">release/2.6</td>
+<td style="text-align:center">&gt;=2.3.2</td>
+<td style="text-align:center">默认使用动态图模式</td>
+</tr>
+<tr>
+<td style="text-align:center">release/2.5</td>
+<td style="text-align:center">&gt;= 2.2.2</td>
+<td style="text-align:center">默认使用动态图模式</td>
+</tr>
+<tr>
+<td style="text-align:center">release/2.4</td>
+<td style="text-align:center">&gt;= 2.2.2</td>
+<td style="text-align:center">默认使用动态图模式</td>
+</tr>
+<tr>
+<td style="text-align:center">release/2.3</td>
+<td style="text-align:center">&gt;= 2.2.0rc</td>
+<td style="text-align:center">默认使用动态图模式</td>
+</tr>
+<tr>
+<td style="text-align:center">release/2.2</td>
+<td style="text-align:center">&gt;= 2.1.2</td>
+<td style="text-align:center">默认使用动态图模式</td>
+</tr>
+<tr>
+<td style="text-align:center">release/2.1</td>
+<td style="text-align:center">&gt;= 2.1.0</td>
+<td style="text-align:center">默认使用动态图模式</td>
+</tr>
+<tr>
+<td style="text-align:center">release/2.0</td>
+<td style="text-align:center">&gt;= 2.0.1</td>
+<td style="text-align:center">默认使用动态图模式</td>
+</tr>
+<tr>
+<td style="text-align:center">release/2.0-rc</td>
+<td style="text-align:center">&gt;= 2.0.1</td>
+<td style="text-align:center">—</td>
+</tr>
+<tr>
+<td style="text-align:center">release/0.5</td>
+<td style="text-align:center">&gt;= 1.8.4</td>
+<td style="text-align:center">大部分模型&gt;=1.8.4 即可运行，Cascade R-CNN 系列模型与 SOLOv2 依赖 2.0.0.rc 版本</td>
+</tr>
+<tr>
+<td style="text-align:center">release/0.4</td>
+<td style="text-align:center">&gt;= 1.8.4</td>
+<td style="text-align:center">PP-YOLO 依赖 1.8.4</td>
+</tr>
+<tr>
+<td style="text-align:center">release/0.3</td>
+<td style="text-align:center">&gt;=1.7</td>
+<td style="text-align:center">—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="安装说明"><a href="#安装说明" class="headerlink" title="安装说明"></a>安装说明</h2><h3 id="1-安装-PaddlePaddle"><a href="#1-安装-PaddlePaddle" class="headerlink" title="1. 安装 PaddlePaddle"></a>1. 安装 PaddlePaddle</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># CUDA10.2</span><br><span class="line">python -m pip install paddlepaddle-gpu==2.3.2 -i https://mirror.baidu.com/pypi/simple</span><br><span class="line"></span><br><span class="line"># CPU</span><br><span class="line">python -m pip install paddlepaddle==2.3.2 -i https://mirror.baidu.com/pypi/simple</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更多 CUDA 版本或环境快速安装，请参考<a target="_blank" rel="noopener" href="https://www.paddlepaddle.org.cn/install/quick">PaddlePaddle 快速安装文档</a></li>
+<li>更多安装方式例如 conda 或源码编译安装方法，请参考<a target="_blank" rel="noopener" href="https://www.paddlepaddle.org.cn/documentation/docs/zh/install/index_cn.html">PaddlePaddle 安装文档</a></li>
+</ul>
+<p>请确保您的 PaddlePaddle 安装成功并且版本不低于需求版本。使用以下命令进行验证。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 在您的Python解释器中确认PaddlePaddle安装成功</span><br><span class="line">&gt;&gt;&gt; import paddle</span><br><span class="line">&gt;&gt;&gt; paddle.utils.run_check()</span><br><span class="line"></span><br><span class="line"># 确认PaddlePaddle版本</span><br><span class="line">python -c &quot;import paddle; print(paddle.__version__)&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong></p>
+<ol>
+<li>如果您希望在多卡环境下使用 PaddleDetection，请首先安装 NCCL</li>
+</ol>
+<h3 id="2-安装-PaddleDetection"><a href="#2-安装-PaddleDetection" class="headerlink" title="2. 安装 PaddleDetection"></a>2. 安装 PaddleDetection</h3><p><strong>注意：</strong> pip 安装方式只支持 Python3</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 克隆PaddleDetection仓库</span><br><span class="line">cd &lt;path/to/clone/PaddleDetection&gt;</span><br><span class="line">git clone https://github.com/PaddlePaddle/PaddleDetection.git</span><br><span class="line"></span><br><span class="line"># 安装其他依赖</span><br><span class="line">cd PaddleDetection</span><br><span class="line">pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line"># 编译安装paddledet</span><br><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong></p>
+<ol>
+<li><p>如果 github 下载代码较慢，可尝试使用<a target="_blank" rel="noopener" href="https://gitee.com/PaddlePaddle/PaddleDetection.git">gitee</a>或者<a target="_blank" rel="noopener" href="https://doc.fastgit.org/zh-cn/guide.html">代理加速</a>。</p>
+</li>
+<li><p>若您使用的是 Windows 系统，由于原版 cocoapi 不支持 Windows，<code>pycocotools</code>依赖可能安装失败，可采用第三方实现版本，该版本仅支持 Python3</p>
+<p><code>pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI</code></p>
+</li>
+<li><p>若您使用的是 Python &lt;= 3.6 的版本，安装<code>pycocotools</code>可能会报错<code>distutils.errors.DistutilsError: Could not find suitable distribution for Requirement.parse(&#39;cython&gt;=0.27.3&#39;)</code>, 您可通过先安装<code>cython</code>如<code>pip install cython</code>解决该问题</p>
+</li>
+</ol>
+<p>安装后确认测试通过：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python ppdet/modeling/tests/test_architectures.py</span><br></pre></td></tr></table></figure>
+<p>测试通过后会提示如下信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.......</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran 7 tests in 12.816s</span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+<h1 id="模型训练部分"><a href="#模型训练部分" class="headerlink" title="模型训练部分"></a>模型训练部分</h1><p>paddledetection 的模型训练主要用的是 tools/train.py 这个文件，但是在训练时需要预先配置基础模型 yml，如<code>ppyoloe_plus_crn_l_80e_coco.yml</code>其结构如下：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">_BASE_:</span></span><br><span class="line">  [</span><br><span class="line">    <span class="string">&quot;../datasets/coco_detection.yml&quot;</span>,</span><br><span class="line">    <span class="string">&quot;../runtime.yml&quot;</span>,</span><br><span class="line">    <span class="string">&quot;./_base_/optimizer_80e.yml&quot;</span>,</span><br><span class="line">    <span class="string">&quot;./_base_/ppyoloe_plus_crn.yml&quot;</span>,</span><br><span class="line">    <span class="string">&quot;./_base_/ppyoloe_plus_reader.yml&quot;</span>,</span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line"><span class="attr">log_iter:</span> <span class="number">100</span> <span class="comment">#多少个图片输出一次log</span></span><br><span class="line"><span class="attr">snapshot_epoch:</span> <span class="number">5</span> <span class="comment">#多少个epoch保存一次参数</span></span><br><span class="line"><span class="attr">weights:</span> <span class="string">output/ppyoloe_plus_crn_l_80e_coco/model_final</span> <span class="comment">#权重</span></span><br><span class="line"></span><br><span class="line"><span class="attr">pretrain_weights:</span> <span class="string">https://bj.bcebos.com/v1/paddledet/models/pretrained/ppyoloe_crn_l_obj365_pretrained.pdparams</span></span><br><span class="line"><span class="attr">depth_mult:</span> <span class="number">1.0</span></span><br><span class="line"><span class="attr">width_mult:</span> <span class="number">1.0</span></span><br></pre></td></tr></table></figure>
+<p>正如文件内容所说，需要配置<em>BASE</em>中的五个文件，其中如果是 PaddleDetection 中自带的模型，<em>BASE</em>中就只要改 datasets 选项，且具体的优化器和训练配置就自己去文件中改，以<code>ppyoloe_plus_crn_l_80e_coco.yml</code>为例其 datasets 的 yml 文件如下所示：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">metric:</span> <span class="string">COCO</span></span><br><span class="line"><span class="attr">num_classes:</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="attr">TrainDataset:</span> <span class="type">!COCODataSet</span></span><br><span class="line">  <span class="attr">image_dir:</span> <span class="string">image</span></span><br><span class="line">  <span class="attr">anno_path:</span> <span class="string">train.json</span></span><br><span class="line">  <span class="attr">dataset_dir:</span> <span class="string">24dog/</span></span><br><span class="line">  <span class="attr">data_fields:</span> [<span class="string">&quot;image&quot;</span>, <span class="string">&quot;gt_bbox&quot;</span>, <span class="string">&quot;gt_class&quot;</span>, <span class="string">&quot;is_crowd&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="attr">EvalDataset:</span> <span class="type">!COCODataSet</span></span><br><span class="line">  <span class="attr">image_dir:</span> <span class="string">image</span></span><br><span class="line">  <span class="attr">anno_path:</span> <span class="string">val.json</span></span><br><span class="line">  <span class="attr">dataset_dir:</span> <span class="string">24dog/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">TestDataset:</span> <span class="type">!ImageFolder</span></span><br><span class="line">  <span class="string">!</span> <span class="attr">anno_path:</span> <span class="string">val.json</span></span><br><span class="line">  <span class="attr">image_dir:</span> <span class="string">image</span></span><br><span class="line">  <span class="attr">dataset_dir:</span> <span class="string">24dog/</span></span><br></pre></td></tr></table></figure>
+<p><code>dataset.yml</code>的需要指向个 json 文件，如上文则是<code>train.json</code>,<code>val.json</code>，但是把测试集与评估集设为同一个。</p>
+<p><code>ppyoloe_plus_reader.yml</code>文件则是对输入图像的转换</p>
+<p><code>optimizer_80e.yml</code>文件时优化器部分，规定了模型训练的轮数和基础学习率</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">epoch:</span> <span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="attr">LearningRate:</span></span><br><span class="line">  <span class="attr">base_lr:</span> <span class="number">0.001</span></span><br><span class="line">  <span class="attr">schedulers:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">CosineDecay</span></span><br><span class="line">      <span class="attr">max_epochs:</span> <span class="number">96</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">LinearWarmup</span></span><br><span class="line">      <span class="attr">start_factor:</span> <span class="number">0</span><span class="string">.</span></span><br><span class="line">      <span class="attr">epochs:</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="attr">OptimizerBuilder:</span></span><br><span class="line">  <span class="attr">optimizer:</span></span><br><span class="line">    <span class="attr">momentum:</span> <span class="number">0.9</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">Momentum</span></span><br><span class="line">  <span class="attr">regularizer:</span></span><br><span class="line">    <span class="attr">factor:</span> <span class="number">0.0005</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">L2</span></span><br></pre></td></tr></table></figure>
+<p>配置完上文后只需要一个命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python tools/train.py -c config/ppyoloe/ppyoloe_plus_crn_l_80e_coco.yml</span><br><span class="line"><span class="comment"># config/ppyoloe/ppyoloe_plus_crn_l_80e_coco.yml == path to your base model yml</span></span><br></pre></td></tr></table></figure>
+<p>模型就会开始训练，至于训练的轮数则取决于模型何时收敛，可以在命令中加上</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python tools/train.py -c config/ppyoloe/ppyoloe_plus_crn_l_80e_coco.yml &gt; file_path</span><br></pre></td></tr></table></figure>
+<p>将命令行保存到日志中方面查看 loss 数据</p>
+<p>训练完成后训练后参数会保存到<code>./output</code>文件夹下，里面包含<code>.pdema</code>,<code>.pdopt</code>,<code>.pdparams</code>，三个文件，其中会包含每次保存的和最终的<code>model_final</code>，可以使用以下命令进行模型评估</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">python tools\infer.py \</span><br><span class="line">    -c configs\picodet\ppyoloe_crn_s_400e_coco.yml \</span><br><span class="line">    --infer_img=24dog\image\monkey0137.jpg \</span><br><span class="line">    --output_dir=infer_output --draw_threshold=0.5 \</span><br><span class="line">    -o weights=output\model_final.pdparams \</span><br><span class="line">    --use_vdl=True</span><br></pre></td></tr></table></figure>
+<p>如果模型效果好的话，就可以直接输出模型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python tools/export_model.py \</span><br><span class="line">    -c configs/picodet/ppyoloe_crn_s_400e_coco.yml \</span><br><span class="line">    -o weights=output/model_final \</span><br><span class="line">    TestReader.fuse_normalize=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>下面提供模型的预测文件，使用此文件时需要确定能够读取到 PaddleDetection 库中<code>deploy/python</code>下的文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Copyright (c) 2020 PaddlePaddle Authors. All Rights Reserved.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></span><br><span class="line"><span class="comment"># you may not use this file except in compliance with the License.</span></span><br><span class="line"><span class="comment"># You may obtain a copy of the License at</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#     http://www.apache.org/licenses/LICENSE-2.0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Unless required by applicable law or agreed to in writing, software</span></span><br><span class="line"><span class="comment"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></span><br><span class="line"><span class="comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span><br><span class="line"><span class="comment"># See the License for the specific language governing permissions and</span></span><br><span class="line"><span class="comment"># limitations under the License.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment">#sys.path.append(&#x27;PaddleDetection&#x27;)</span></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> yaml</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> paddle</span><br><span class="line"><span class="keyword">from</span> paddle.inference <span class="keyword">import</span> Config</span><br><span class="line"><span class="keyword">from</span> paddle.inference <span class="keyword">import</span> create_predictor</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> preprocess <span class="keyword">import</span> preprocess, Resize, NormalizeImage, Permute, PadStride</span><br><span class="line"><span class="keyword">from</span> utils <span class="keyword">import</span> argsparser, Timer, get_current_memory_mb</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PredictConfig</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;set config of preprocess, postprocess and visualize</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        model_dir (str): root path of model.yml</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, model_dir</span>):</span><br><span class="line">        <span class="comment"># parsing Yaml config for Preprocess</span></span><br><span class="line">        deploy_file = os.path.join(model_dir, <span class="string">&#x27;infer_cfg.yml&#x27;</span>)</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(deploy_file) <span class="keyword">as</span> f:</span><br><span class="line">            yml_conf = yaml.safe_load(f)</span><br><span class="line">        self.arch = yml_conf[<span class="string">&#x27;arch&#x27;</span>]</span><br><span class="line">        self.preprocess_infos = yml_conf[<span class="string">&#x27;Preprocess&#x27;</span>]</span><br><span class="line">        self.min_subgraph_size = yml_conf[<span class="string">&#x27;min_subgraph_size&#x27;</span>]</span><br><span class="line">        self.labels = yml_conf[<span class="string">&#x27;label_list&#x27;</span>]</span><br><span class="line">        self.mask = <span class="literal">False</span></span><br><span class="line">        self.use_dynamic_shape = yml_conf[<span class="string">&#x27;use_dynamic_shape&#x27;</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;mask&#x27;</span> <span class="keyword">in</span> yml_conf:</span><br><span class="line">            self.mask = yml_conf[<span class="string">&#x27;mask&#x27;</span>]</span><br><span class="line">        self.tracker = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;tracker&#x27;</span> <span class="keyword">in</span> yml_conf:</span><br><span class="line">            self.tracker = yml_conf[<span class="string">&#x27;tracker&#x27;</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;NMS&#x27;</span> <span class="keyword">in</span> yml_conf:</span><br><span class="line">            self.nms = yml_conf[<span class="string">&#x27;NMS&#x27;</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;fpn_stride&#x27;</span> <span class="keyword">in</span> yml_conf:</span><br><span class="line">            self.fpn_stride = yml_conf[<span class="string">&#x27;fpn_stride&#x27;</span>]</span><br><span class="line">        self.print_config()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">print_config</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;%s: %s&#x27;</span> % (<span class="string">&#x27;Model Arch&#x27;</span>, self.arch))</span><br><span class="line">        <span class="keyword">for</span> op_info <span class="keyword">in</span> self.preprocess_infos:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;--%s: %s&#x27;</span> % (<span class="string">&#x27;transform op&#x27;</span>, op_info[<span class="string">&#x27;type&#x27;</span>]))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_test_images</span>(<span class="params">infer_file</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(infer_file, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        dirs = f.readlines()</span><br><span class="line">    images = []</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">dir</span> <span class="keyword">in</span> dirs:</span><br><span class="line">        images.append(<span class="built_in">eval</span>(<span class="built_in">repr</span>(<span class="built_in">dir</span>.replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>))).replace(<span class="string">&#x27;\\&#x27;</span>, <span class="string">&#x27;/&#x27;</span>))</span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(images) &gt; <span class="number">0</span>, <span class="string">&quot;no image found in &#123;&#125;&quot;</span>.<span class="built_in">format</span>(infer_file)</span><br><span class="line">    <span class="keyword">return</span> images</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_predictor</span>(<span class="params">model_dir</span>):</span><br><span class="line">    config = Config(</span><br><span class="line">        os.path.join(model_dir, <span class="string">&#x27;model.pdmodel&#x27;</span>),</span><br><span class="line">        os.path.join(model_dir, <span class="string">&#x27;model.pdiparams&#x27;</span>))</span><br><span class="line">    <span class="comment"># initial GPU memory(M), device ID</span></span><br><span class="line">    config.enable_use_gpu(<span class="number">2000</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="comment"># optimize graph and fuse op</span></span><br><span class="line">    config.switch_ir_optim(<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># disable print log when predict</span></span><br><span class="line">    config.disable_glog_info()</span><br><span class="line">    <span class="comment"># enable shared memory</span></span><br><span class="line">    config.enable_memory_optim()</span><br><span class="line">    <span class="comment"># disable feed, fetch OP, needed by zero_copy_run</span></span><br><span class="line">    config.switch_use_feed_fetch_ops(<span class="literal">False</span>)</span><br><span class="line">    predictor = create_predictor(config)</span><br><span class="line">    <span class="keyword">return</span> predictor, config</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_inputs</span>(<span class="params">imgs, im_info</span>):</span><br><span class="line">    inputs = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    im_shape = []</span><br><span class="line">    scale_factor = []</span><br><span class="line">    <span class="keyword">for</span> e <span class="keyword">in</span> im_info:</span><br><span class="line">        im_shape.append(np.array((e[<span class="string">&#x27;im_shape&#x27;</span>],)).astype(<span class="string">&#x27;float32&#x27;</span>))</span><br><span class="line">        scale_factor.append(np.array((e[<span class="string">&#x27;scale_factor&#x27;</span>],)).astype(<span class="string">&#x27;float32&#x27;</span>))</span><br><span class="line"></span><br><span class="line">    origin_scale_factor = np.concatenate(scale_factor, axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    imgs_shape = [[e.shape[<span class="number">1</span>], e.shape[<span class="number">2</span>]] <span class="keyword">for</span> e <span class="keyword">in</span> imgs]</span><br><span class="line">    max_shape_h = <span class="built_in">max</span>([e[<span class="number">0</span>] <span class="keyword">for</span> e <span class="keyword">in</span> imgs_shape])</span><br><span class="line">    max_shape_w = <span class="built_in">max</span>([e[<span class="number">1</span>] <span class="keyword">for</span> e <span class="keyword">in</span> imgs_shape])</span><br><span class="line">    padding_imgs = []</span><br><span class="line">    padding_imgs_shape = []</span><br><span class="line">    padding_imgs_scale = []</span><br><span class="line">    <span class="keyword">for</span> img <span class="keyword">in</span> imgs:</span><br><span class="line">        im_c, im_h, im_w = img.shape[:]</span><br><span class="line">        padding_im = np.zeros(</span><br><span class="line">            (im_c, max_shape_h, max_shape_w), dtype=np.float32)</span><br><span class="line">        padding_im[:, :im_h, :im_w] = np.array(img, dtype=np.float32)</span><br><span class="line">        padding_imgs.append(padding_im)</span><br><span class="line">        padding_imgs_shape.append(</span><br><span class="line">            np.array([max_shape_h, max_shape_w]).astype(<span class="string">&#x27;float32&#x27;</span>))</span><br><span class="line">        rescale = [<span class="built_in">float</span>(max_shape_h) / <span class="built_in">float</span>(im_h), <span class="built_in">float</span>(max_shape_w) / <span class="built_in">float</span>(im_w)]</span><br><span class="line">        padding_imgs_scale.append(np.array(rescale).astype(<span class="string">&#x27;float32&#x27;</span>))</span><br><span class="line">    inputs[<span class="string">&#x27;image&#x27;</span>] = np.stack(padding_imgs, axis=<span class="number">0</span>)</span><br><span class="line">    inputs[<span class="string">&#x27;im_shape&#x27;</span>] = np.stack(padding_imgs_shape, axis=<span class="number">0</span>)</span><br><span class="line">    inputs[<span class="string">&#x27;scale_factor&#x27;</span>] = origin_scale_factor</span><br><span class="line">    <span class="keyword">return</span> inputs</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Detector</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,</span></span><br><span class="line"><span class="params">                 pred_config,</span></span><br><span class="line"><span class="params">                 model_dir,</span></span><br><span class="line"><span class="params">                 device=<span class="string">&#x27;CPU&#x27;</span>,</span></span><br><span class="line"><span class="params">                 run_mode=<span class="string">&#x27;paddle&#x27;</span>,</span></span><br><span class="line"><span class="params">                 batch_size=<span class="number">1</span>,</span></span><br><span class="line"><span class="params">                 trt_min_shape=<span class="number">1</span>,</span></span><br><span class="line"><span class="params">                 trt_max_shape=<span class="number">1280</span>,</span></span><br><span class="line"><span class="params">                 trt_opt_shape=<span class="number">640</span>,</span></span><br><span class="line"><span class="params">                 trt_calib_mode=<span class="literal">False</span>,</span></span><br><span class="line"><span class="params">                 cpu_threads=<span class="number">1</span>,</span></span><br><span class="line"><span class="params">                 enable_mkldnn=<span class="literal">False</span></span>):</span><br><span class="line">        self.pred_config = pred_config</span><br><span class="line">        self.predictor, self.config = load_predictor(model_dir)</span><br><span class="line">        self.det_times = Timer()</span><br><span class="line">        self.cpu_mem, self.gpu_mem, self.gpu_util = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        self.preprocess_ops = self.get_ops()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_ops</span>(<span class="params">self</span>):</span><br><span class="line">        preprocess_ops = []</span><br><span class="line">        <span class="keyword">for</span> op_info <span class="keyword">in</span> self.pred_config.preprocess_infos:</span><br><span class="line">            new_op_info = op_info.copy()</span><br><span class="line">            op_type = new_op_info.pop(<span class="string">&#x27;type&#x27;</span>)</span><br><span class="line">            preprocess_ops.append(<span class="built_in">eval</span>(op_type)(**new_op_info))</span><br><span class="line">        <span class="keyword">return</span> preprocess_ops</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">self, inputs</span>):</span><br><span class="line">        <span class="comment"># preprocess</span></span><br><span class="line">        input_names = self.predictor.get_input_names()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(input_names)):</span><br><span class="line">            input_tensor = self.predictor.get_input_handle(input_names[i])</span><br><span class="line">            input_tensor.copy_from_cpu(inputs[input_names[i]])</span><br><span class="line"></span><br><span class="line">        np_boxes, np_boxes_num = [], []</span><br><span class="line"></span><br><span class="line">        <span class="comment"># model_prediction</span></span><br><span class="line">        self.predictor.run()</span><br><span class="line">        np_boxes.clear()</span><br><span class="line">        np_boxes_num.clear()</span><br><span class="line">        output_names = self.predictor.get_output_names()</span><br><span class="line">        num_outs = <span class="built_in">int</span>(<span class="built_in">len</span>(output_names) / <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> out_idx <span class="keyword">in</span> <span class="built_in">range</span>(num_outs):</span><br><span class="line">            np_boxes.append(</span><br><span class="line">                self.predictor.get_output_handle(output_names[out_idx])</span><br><span class="line">                .copy_to_cpu())</span><br><span class="line">            np_boxes_num.append(</span><br><span class="line">                self.predictor.get_output_handle(output_names[</span><br><span class="line">                                                     out_idx + num_outs]).copy_to_cpu())</span><br><span class="line"></span><br><span class="line">        np_boxes, np_boxes_num = np.array(np_boxes[<span class="number">0</span>]), np.array(np_boxes_num[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">dict</span>(boxes=np_boxes, boxes_num=np_boxes_num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">predict_image</span>(<span class="params">detector, image_list, result_path, threshold</span>):</span><br><span class="line">    c_results = &#123;<span class="string">&quot;result&quot;</span>: []&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(image_list)):</span><br><span class="line">        <span class="comment"># 检测模型图像预处理</span></span><br><span class="line">        input_im_lst = []</span><br><span class="line">        input_im_info_lst = []</span><br><span class="line"></span><br><span class="line">        im_path = image_list[index]</span><br><span class="line">        im, im_info = preprocess(im_path, detector.preprocess_ops)</span><br><span class="line"></span><br><span class="line">        input_im_lst.append(im)</span><br><span class="line">        input_im_info_lst.append(im_info)</span><br><span class="line">        inputs = create_inputs(input_im_lst, input_im_info_lst)</span><br><span class="line"></span><br><span class="line">        image_id = os.path.basename(im_path).split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 检测模型预测结果</span></span><br><span class="line">        det_results = detector.predict(inputs)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 检测模型写结果</span></span><br><span class="line">        im_bboxes_num = det_results[<span class="string">&#x27;boxes_num&#x27;</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> im_bboxes_num &gt; <span class="number">0</span>:</span><br><span class="line">            bbox_results = det_results[<span class="string">&#x27;boxes&#x27;</span>][<span class="number">0</span>:im_bboxes_num, <span class="number">2</span>:]</span><br><span class="line">            id_results = det_results[<span class="string">&#x27;boxes&#x27;</span>][<span class="number">0</span>:im_bboxes_num, <span class="number">0</span>]</span><br><span class="line">            score_results = det_results[<span class="string">&#x27;boxes&#x27;</span>][<span class="number">0</span>:im_bboxes_num, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(im_bboxes_num):</span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">float</span>(score_results[idx]) &gt;= threshold:</span><br><span class="line">                    c_results[<span class="string">&quot;result&quot;</span>].append(&#123;<span class="string">&quot;image_id&quot;</span>: image_id,</span><br><span class="line">                                                <span class="string">&quot;type&quot;</span>: <span class="built_in">int</span>(id_results[idx]) + <span class="number">1</span>,</span><br><span class="line">                                                <span class="string">&quot;x&quot;</span>: <span class="built_in">float</span>(bbox_results[idx][<span class="number">0</span>]),</span><br><span class="line">                                                <span class="string">&quot;y&quot;</span>: <span class="built_in">float</span>(bbox_results[idx][<span class="number">1</span>]),</span><br><span class="line">                                                <span class="string">&quot;width&quot;</span>: <span class="built_in">float</span>(bbox_results[idx][<span class="number">2</span>]) - <span class="built_in">float</span>(bbox_results[idx][<span class="number">0</span>]),</span><br><span class="line">                                                <span class="string">&quot;height&quot;</span>: <span class="built_in">float</span>(bbox_results[idx][<span class="number">3</span>]) - <span class="built_in">float</span>(bbox_results[idx][<span class="number">1</span>]),</span><br><span class="line">                                                <span class="string">&quot;segmentation&quot;</span>: []&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 写文件</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(result_path, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> ft:</span><br><span class="line">        json.dump(c_results, ft)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">infer_txt, result_path, det_model_path, threshold</span>):</span><br><span class="line">    pred_config = PredictConfig(det_model_path)</span><br><span class="line">    detector = Detector(pred_config, det_model_path)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># predict from image</span></span><br><span class="line">    img_list = get_test_images(infer_txt)</span><br><span class="line">    predict_image(detector, img_list, result_path, threshold)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    start_time = time.time()</span><br><span class="line">    det_model_path = <span class="string">&quot;model/base&quot;</span> <span class="comment">#export model path</span></span><br><span class="line"></span><br><span class="line">    threshold = <span class="number">0.1</span></span><br><span class="line"></span><br><span class="line">    paddle.enable_static()</span><br><span class="line">    infer_txt = sys.argv[<span class="number">1</span>]</span><br><span class="line">    result_path = sys.argv[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">    main(infer_txt, result_path, det_model_path, threshold)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;total time:&#x27;</span>, time.time() - start_time)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">little_penguin66</div><div class="post-copyright__author_desc">Minimalism is the best!</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/%E6%9D%82%E5%AD%A6/PaddleDetection%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/%E6%9D%82%E5%AD%A6/PaddleDetection%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/')">PaddleDetection基础训练</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/WechatPay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AliPay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/%E6%9D%82%E5%AD%A6/PaddleDetection%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=PaddleDetection基础训练&amp;url=http://example.com/%E6%9D%82%E5%AD%A6/PaddleDetection%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/&amp;pic=https://user-images.githubusercontent.com/48054808/160532560-34cf7a1f-d950-435e-90d2-4b0a679e5119.png" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>机器学习<span class="tagsPageCount">17</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://user-images.githubusercontent.com/48054808/160532560-34cf7a1f-d950-435e-90d2-4b0a679e5119.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/%E6%9D%82%E5%AD%A6/LLaMA-Factory%E4%BD%BF%E7%94%A8/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/llamafactory.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">LLaMA-Factory使用</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/uncategorized/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/" title="九种常见激活函数"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/activationFuction.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-02</div><div class="title">九种常见激活函数</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/index/" title="AAAMLP前言"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLPCOVER.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-05</div><div class="title">AAAMLP前言</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/" title="准备环境"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLPCOVER.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">准备环境</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BB%A3%E7%A0%81%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/" title="可重复代码和模型方法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLPCOVER.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">可重复代码和模型方法</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E4%BA%A4%E5%8F%89%E6%A3%80%E9%AA%8C/" title="交叉检验"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLPCOVER.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-05</div><div class="title">交叉检验</div></div></a></div><div><a href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95/" title="图像分类和分割方法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLPCOVER.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-05-06</div><div class="title">图像分类和分割方法</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> Comment</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有没有<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，也没<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你不可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">little_penguin66</h1><div class="author-info__desc">Minimalism is the best!</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/littlepenguin66" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/34685008" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>Announcement</span></div><div class="announcement_content">欢迎来看我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PaddleDetection-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">PaddleDetection 简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82"><span class="toc-number">2.1.</span> <span class="toc-text">环境要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E"><span class="toc-number">2.2.</span> <span class="toc-text">安装说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85-PaddlePaddle"><span class="toc-number">2.2.1.</span> <span class="toc-text">1. 安装 PaddlePaddle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-PaddleDetection"><span class="toc-number">2.2.2.</span> <span class="toc-text">2. 安装 PaddleDetection</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E9%83%A8%E5%88%86"><span class="toc-number">3.</span> <span class="toc-text">模型训练部分</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/%E6%9D%82%E5%AD%A6/PaddleDetection%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/" title="PaddleDetection基础训练"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://user-images.githubusercontent.com/48054808/160532560-34cf7a1f-d950-435e-90d2-4b0a679e5119.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PaddleDetection基础训练"/></a><div class="content"><a class="title" href="/%E6%9D%82%E5%AD%A6/PaddleDetection%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83/" title="PaddleDetection基础训练">PaddleDetection基础训练</a><time datetime="2024-05-27T16:00:00.000Z" title="Created 2024-05-28 00:00:00">2024-05-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E6%9D%82%E5%AD%A6/LLaMA-Factory%E4%BD%BF%E7%94%A8/" title="LLaMA-Factory使用"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/llamafactory.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LLaMA-Factory使用"/></a><div class="content"><a class="title" href="/%E6%9D%82%E5%AD%A6/LLaMA-Factory%E4%BD%BF%E7%94%A8/" title="LLaMA-Factory使用">LLaMA-Factory使用</a><time datetime="2024-05-13T16:00:00.000Z" title="Created 2024-05-14 00:00:00">2024-05-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/" title="准备环境"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLPCOVER.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="准备环境"/></a><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/" title="准备环境">准备环境</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BB%A3%E7%A0%81%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/" title="可重复代码和模型方法"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLPCOVER.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="可重复代码和模型方法"/></a><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%8F%AF%E9%87%8D%E5%A4%8D%E4%BB%A3%E7%A0%81%E5%92%8C%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/" title="可重复代码和模型方法">可重复代码和模型方法</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95/" title="图像分类和分割方法"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/AAAMLPCOVER.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="图像分类和分割方法"/></a><div class="content"><a class="title" href="/AAAMLP/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/AAAMLprob/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E5%92%8C%E5%88%86%E5%89%B2%E6%96%B9%E6%B3%95/" title="图像分类和分割方法">图像分类和分割方法</a><time datetime="2024-05-05T16:00:00.000Z" title="Created 2024-05-06 00:00:00">2024-05-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="/2201529520@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/littlepenguin66/webImage/mcpfp%20-%20little_penguin66.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/littlepenguin66" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/34685008" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div><div class="copyright">&copy;2024 By little_penguin66</div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a></p></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">21</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://littlepenguin66.github.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/littlepenguin66" title="Github"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="anzhiyu-icon-github" alt="Github"/><span class="back-menu-item-text">Github</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 留言</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Python/" style="font-size: 0.88rem;">Python<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 0.88rem;">前端<sup>2</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E7%A8%8B/" style="font-size: 0.88rem;">数学物理方程<sup>1</sup></a><a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 0.88rem;">机器学习<sup>17</sup></a></div></div><hr/></div></div><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keybordList"><div class="keybordItem"><div class="keyGroup"><div class="key">shift K</div></div><div class="keyContent"><div class="content">关闭快捷键功能</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift A</div></div><div class="keyContent"><div class="content">打开/关闭中控台</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift D</div></div><div class="keyContent"><div class="content">深色/浅色显示模式</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift S</div></div><div class="keyContent"><div class="content">站内搜索</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift R</div></div><div class="keyContent"><div class="content">随机访问</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift H</div></div><div class="keyContent"><div class="content">返回首页</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift F</div></div><div class="keyContent"><div class="content">友链鱼塘</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift L</div></div><div class="keyContent"><div class="content">友链页面</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift P</div></div><div class="keyContent"><div class="content">关于本站</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift I</div></div><div class="keyContent"><div class="content">原版/本站右键菜单</div></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch-commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.4"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/29/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2024 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 little_penguin66 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.cbd.int/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://jrz66-comment.hf.space',
+      region: 'ap-east-1',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.25/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://jrz66-comment.hf.space',
+      region: 'ap-east-1',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"><script async src="/js/anzhiyu/comment_barrage.js"></script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[image]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[link]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[code]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://jrz66-comment.hf.space',
+        region: 'ap-east-1',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "Unable to get the data, please make sure the settings are correct."
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.25/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += 'No Comment'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "annoymously@aml.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
